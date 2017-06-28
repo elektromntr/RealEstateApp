@@ -1,0 +1,202 @@
+﻿@model IEnumerable<dyplomowaApka00.Models.Mieszkanie>
+
+<section class="section-table cid-qvZiwymKFt" id="table1-n" data-rv-view="1454">
+
+    <div class="container container-table">
+        <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
+            Tabela mieszkań
+        </h2>
+        <h3 class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-5">
+            Zobacz wszystkie mieszkania w ofercie
+        </h3>
+        <p class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-7">
+            
+        </p>
+        <div class="table-wrapper">
+            <div class="container">
+
+            </div>
+            <div class="container scroll">
+                <table class="table" cellspacing="0">
+                    <thead>
+                        <tr class="table-heads ">
+
+
+
+
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.SymbolMieszkania)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.Status.Nazwa)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.Cena)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.Poziom)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.Powierzchnia)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.Pokoje)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                                @Html.DisplayNameFor(model => model.TerminRealizacji)
+                            </th>
+                            <th class="head-item mbr-fonts-style display-7">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.SymbolMieszkania)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.Status.Nazwa)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.Cena)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.Poziom)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.Powierzchnia)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.Pokoje)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.DisplayFor(modelItem => item.TerminRealizacji)
+                            </td>
+                            <td class="body-item mbr-fonts-style display-7">
+                                @Html.ActionLink("Szczegóły", "Details", new { id = item.MieszkanieId })
+                            </td>
+                       </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="container table-info-container">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@*
+    <table class="table">
+    <tr>
+        <th>
+        @Html.DisplayNameFor(model => model.Inwestycja.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SymbolMieszkania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Nazwa)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Poziom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Powierzchnia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pokoje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ogrod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Antresola)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garaz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiejscePostojowe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KomorkaLokatorska)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TerminRealizacji)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DodatkoweInfo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+        @Html.DisplayFor(modelItem => item.Inwestycja.Nazwa)
+    </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SymbolMieszkania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Nazwa)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Poziom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Powierzchnia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pokoje)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.Ogrod)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.Antresola)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.Garaz)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.MiejscePostojowe)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.KomorkaLokatorska)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TerminRealizacji)
+        </td>
+        <td>
+        <a class="btn btn-info" role="button" href="@Html.DisplayFor(modelItem => item.ImageFile)" target="_blank">Rzut</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DodatkoweInfo)
+        </td>
+        <td>
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.MieszkanieId }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MieszkanieId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MieszkanieId })
+        </td>
+    </tr>
+}
+
+</table>
+*@

@@ -1,0 +1,246 @@
+﻿@model dyplomowaApka00.Models.Dom
+
+@if (Model.InwestycjaId == 1)
+{
+    Layout = "~/Views/Shared/_LayoutLtn.cshtml";
+}
+else if (Model.InwestycjaId == 2)
+{
+    Layout = "~/Views/Shared/_LayoutKrzptw.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_LayoutSogo.cshtml";
+}
+
+@{
+    ViewBag.Title = "Szczegóły";
+}
+
+<!--mobirise-->
+
+<section class="header1 cid-qw2YPHwGm4 mbr-parallax-background" id="header1-s" data-rv-view="40">
+
+    <div class="mbr-overlay" style="opacity: 0.3;">
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">@Html.DisplayFor(model => model.Inwestycja.Nazwa)</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--karty-->
+<section class="counters1 counters cid-qvZgUfcMPB" id="counters1-1f" data-rv-view="452">
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            @Html.DisplayFor(model => model.SymbolDomu)
+        </h2>
+        <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
+            @Html.DisplayFor(model => model.Status.Nazwa)
+        </h3>
+        <!--edycjaStart-->
+        <div class="align-center">
+            @if (Roles.IsUserInRole("Operator"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.DomId }, new { @class = "btn btn-primary display-4" })
+            }
+            else if (Roles.IsUserInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.DomId }, new { @class = "btn btn-primary  display-4" })
+            }
+            else if (Roles.IsUserInRole("Obsluga"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.DomId }, new { @class = "btn btn-primary  display-4" })
+            }
+        </div>
+        <!--edycjaStop-->
+        <div class="container pt-4 mt-2">
+            <div class="media-container-row">
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                    <div class="panel-item p-3">
+
+                        <div class="card-text">
+                            <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                @Html.DisplayFor(model => model.Cena)
+                            </h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                Cena
+                            </h4>
+                            <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                Mobirise give you the freedom to develop as many websites as you like given the fact that it is desktop app. Mobirise is the perfect gide.
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item p-3">
+
+                        <div class="card-text">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                @Html.DisplayFor(model => model.Powerzchnia)
+                            </h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                Powierzchnia domu
+                            </h4>
+                            <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-2">
+                    <div class="panel-item p-3">
+
+                        <div class="card-text">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                @Html.DisplayFor(model => model.Pokoje)
+                            </h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                Ilość pokoi
+                            </h4>
+                            <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                One of Bootstrap's big point is responsiveness and obirise male effective use of this by genereating highly responsive website for you.
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                    <div class="panel-item p-3">
+
+                        <div class="card-texts">
+                            <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                @Html.DisplayFor(model => model.TerminRealizacji)
+                            </h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                Termin realizacji
+                            </h4>
+                            <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise make it easy for you to use them on your website easily and freely
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--rowEnd-->
+
+            <div class="media-container-row">
+
+                @*<div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item p-3">
+
+                        <div class="card-texts">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                @Html.DisplayFor(model => model.Poziom)
+                            </h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                Poziom mieszkania
+                            </h4>
+                            <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise make it easy for you to use them on your website easily and freely
+                            </p>-->
+                        </div>
+                    </div>
+                </div>*@
+
+                @if (Model.Garaz == true)
+                {
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                        <div class="panel-item p-3">
+
+                            <div class="card-texts">
+                                <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                    @Html.DisplayFor(model => model.Garaz)
+                                </h3>
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                    Garaż
+                                </h4>
+                                <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                    Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise make it easy for you to use them on your website easily and freely
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.KomorkaLokatorska == true)
+                {
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                        <div class="panel-item p-3">
+
+                            <div class="card-texts">
+                                <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                    @Html.DisplayFor(model => model.KomorkaLokatorska)
+                                </h3>
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                    Komórka lokatorska
+                                </h4>
+                                <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                    Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise make it easy for you to use them on your website easily and freely
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.Ogrod != null)
+                {
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                        <div class="panel-item p-3">
+
+                            <div class="card-texts">
+                                <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                    @Html.DisplayFor(model => model.Ogrod)
+                                </h3>
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                    Powierzchnia ogrodu
+                                </h4>
+                                <!--<p class="mbr-content-text mbr-fonts-style display-7">
+                                    Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise make it easy for you to use them on your website easily and freely
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.DodatkoweInfo != null)
+                {
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                        <div class="panel-item p-3">
+
+                            <div class="card-texts">
+                                <!--<h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+
+                                </h3>-->
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                    Dodatkowe informacje
+                                </h4>
+                                <p class="mbr-content-text mbr-fonts-style display-7">
+                                    @Html.DisplayFor(model => model.DodatkoweInfo)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div> <!--rowEnd-->
+
+        </div>
+
+    </div>
+</section>
+<!--kartyEnd-->
+<!--rzut-->
+<section class="cid-qxcQP9QueA" id="image3-1i" data-rv-view="455">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 80%;">
+            <img src="@Html.DisplayFor(model => model.ImageFile)" width="1400" alt="@Html.DisplayFor(model => model.SymbolDomu)" media-simple="true">
+        </div>
+    </figure>
+</section>
+<!--rzutEnd-->
