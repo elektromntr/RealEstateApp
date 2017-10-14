@@ -1,0 +1,45 @@
+﻿@model IEnumerable<dyplomowaApka00.Models.Inwestycja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="header1 cid-qw2YPHwGm4 mbr-parallax-background" id="header1-s" data-rv-view="40">
+
+    <div class="mbr-overlay" style="opacity: 0.3;">
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">Inwestycje</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="align-center">
+    @Html.ActionLink("Utwórz nową inwestycję", "Create", "Inwestycje", routeValues: null, htmlAttributes: new { @class = "btn btn-primary display-4" })
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InwestycjaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InwestycjaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InwestycjaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="~/assets/images/logoSogo.svg" type="image/x-icon">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*Styles.Render("~/Content/css")
+    @Styles.Render("~/assets/mojCss")*@
+    <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="~/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="~/assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="~/assets/animate.css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="~/assets/theme/css/style.css">
+    <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script src="~/assets/web/assets/jquery/jquery.min.js"></script>
+    
+
+</head>
+<body>
+    
+    <section class="menu cid-qvZclJodnm" once="menu" id="menu1-g" data-rv-view="922">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/assets/images/logoSogo.svg" alt="Osiedla Sogo" media-simple="true" style="height: 4.0rem;">
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item dropdown open">
+                        <a class="nav-link link text-primary dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="true">
+                            <span class="mbri-home mbr-iconfont mbr-iconfont-btn" style="color: rgb(239, 89, 35);"></span>
+                            Inwestycje
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = 1 })" aria-expanded="false">Osiedle Lutynia</a><br>
+                            <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = 2 })" aria-expanded="false">Osiedle Krzeptów</a><br>
+                            @if (Roles.IsUserInRole("Admin"))
+                            {
+                                @Html.ActionLink("Edytuj inwestycje", "Index", new { controller = "Inwestycje" }, new { @class = "text-primary dropdown-item display-4"})
+                                @*<a class="text-primary dropdown-item display-4" href="@Url.Action("Index", new { controller = "Inwestycje"})" aria-expanded="false">Edytuj inwestycje</a>*@
+                            }
+                            else if (Roles.IsUserInRole("Operator"))
+                            {
+                                @Html.ActionLink("Edytuj inwestycje", "Index", new { controller = "Inwestycje" }, new { @class = "text-primary dropdown-item display-4" })
+                            }
+                            @*@Html.ActionLink("Osiedle Lutynia", "Details", "Inwestycje", new { @class = "text-primary dropdown-item display-4" })<br>
+                            @Html.ActionLink("Osiedle Krzeptów", "Details", "Inwestycje", new { @class = "text-primary dropdown-item display-4" }, new { @aria-expanded = "false" })*@
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-primary display-4" href="@Url.Action("About", "Home")"><span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>Informacje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-primary display-4" href="#footer1-10"><span class="mbri-pin mbr-iconfont mbr-iconfont-btn"></span>Kontakt</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+
+    <div>
+        <div>
+            @RenderBody()
+        </div>
+        <div>
+            @Html.Partial("_Mapa")
+            @Html.Partial("_Kontakt")
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+    @*<script src="~/assets/web/assets/jquery/jquery.min.js"></script>*@
+    <script src="~/assets/popper/popper.min.js"></script>
+    <script src="~/assets/tether/tether.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/smooth-scroll/smooth-scroll.js"></script>
+    <script src="~/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+    <script src="~/assets/viewport-checker/jquery.viewportchecker.js"></script>
+    <script src="~/assets/jarallax/jarallax.min.js"></script>
+    <script src="~/assets/dropdown/js/script.min.js"></script>
+    <script src="~/assets/theme/js/script.js"></script>
+
+    @*Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    @Scripts.Render("~/assets/mojScript")*@
+    
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbri-down mbr-iconfont"></i></a></div>
+    <input name="animation" type="hidden">
+    
+</body>
+</html>

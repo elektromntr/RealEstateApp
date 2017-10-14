@@ -1,12 +1,33 @@
 ﻿@using dyplomowaApka00.Models
 @model LoginViewModel
+
 @{
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
+<section class="header9 cid-qw9UWgpzo8 mbr-fullscreen mbr-parallax-background" id="header9-14" data-rv-view="924">
+
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(13, 38, 116);">
+    </div>
+    <div class="container">
+        <div class="media-container-column mbr-white col-md-8">
+            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">Osiedla Sogo</h1>
+            <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-2">
+                Mieszkania dla Twojej rodziny
+            </h3>
+
+
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+
+<div class="container">
+    <div class="col-md-12">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -41,9 +62,12 @@
                         <input type="submit" value="Log in" class="btn btn-default" />
                     </div>
                 </div>
-                <p>
+                if (Roles.IsUserInRole("Admin"))
+                {
+                <button class="col-md-offset-2 btn btn-danger">
                     @Html.ActionLink("Register as a new user", "Register")
-                </p>
+                </button>
+                }
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
@@ -51,11 +75,11 @@
             }
         </section>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
-    </div>
+    </div>*@
 </div>
 
 @section Scripts {

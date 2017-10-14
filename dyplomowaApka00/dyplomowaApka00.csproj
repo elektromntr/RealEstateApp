@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -58,6 +62,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -102,13 +110,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease">
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -168,29 +172,126 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DomyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InwestycjeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MieszkaniaController.cs" />
+    <Compile Include="Controllers\StatusyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Dom.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Inwestycja.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Mieszkanie.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\animate.css\animate.min.css" />
+    <Content Include="assets\bootstrap-carousel-swipe\bootstrap-carousel-swipe.js" />
+    <Content Include="assets\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\data-tables\data-tables.bootstrap4.min.css" />
+    <Content Include="assets\data-tables\data-tables.bootstrap4.min.js" />
+    <Content Include="assets\data-tables\jquery.data-tables.min.js" />
+    <Content Include="assets\dropdown\css\style.css" />
+    <Content Include="assets\dropdown\js\script.min.js" />
+    <Content Include="assets\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\images\01.jpg" />
+    <Content Include="assets\images\02.jpg" />
+    <Content Include="assets\images\03.jpg" />
+    <Content Include="assets\images\2-11-1630x1286.jpg" />
+    <Content Include="assets\images\background1.jpg" />
+    <Content Include="assets\images\background5.jpg" />
+    <Content Include="assets\images\fotolia-103141139-subscription-monthly-m-1690x1124.jpg" />
+    <Content Include="assets\images\fotolia-84433074-subscription-monthly-xxl-5760x3840.jpg" />
+    <Content Include="assets\images\fotolia-99102617-subscription-monthly-xl-1-2000x1350.jpg" />
+    <Content Include="assets\images\gallery00.jpg" />
+    <Content Include="assets\images\gallery01.jpg" />
+    <Content Include="assets\images\gallery02.jpg" />
+    <Content Include="assets\images\gallery03.jpg" />
+    <Content Include="assets\images\gallery04.jpg" />
+    <Content Include="assets\images\gallery05.jpg" />
+    <Content Include="assets\images\gallery06.jpg" />
+    <Content Include="assets\images\gallery07.jpg" />
+    <Content Include="assets\images\jumbotron.jpg" />
+    <Content Include="assets\images\krzeptowWiz04.jpg" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\logo20.png" />
+    <Content Include="assets\images\logo21.png" />
+    <Content Include="assets\images\logo22.png" />
+    <Content Include="assets\images\logo23.png" />
+    <Content Include="assets\images\logo24.png" />
+    <Content Include="assets\images\logo25.png" />
+    <Content Include="assets\images\logosogo-230x53.png" />
+    <Content Include="assets\images\lutynia-pogodna-4-1024x512.jpg" />
+    <Content Include="assets\images\mbr-favicon.png" />
+    <Content Include="assets\images\logoSogo.svg" />
+    <Content Include="assets\jarallax\jarallax.min.js" />
+    <Content Include="assets\jquery-mb-vimeo_player\jquery.mb.vimeo_player.js" />
+    <Content Include="assets\masonry\masonry.pkgd.min.js" />
+    <Content Include="assets\mobirise-gallery\player.min.js" />
+    <Content Include="assets\mobirise-gallery\script.js" />
+    <Content Include="assets\mobirise-gallery\style.css" />
+    <Content Include="assets\mobirise-slider-video\script.js" />
+    <Content Include="assets\mobirise\css\mbr-additional-Krzptw.css" />
+    <Content Include="assets\mobirise\css\mbr-additional-Ltn.css" />
+    <Content Include="assets\mobirise\css\mbr-additional.css" />
+    <Content Include="assets\popper\popper.min.js" />
+    <Content Include="assets\smooth-scroll\smooth-scroll.js" />
+    <Content Include="assets\socicon\css\styles.css" />
+    <Content Include="assets\socicon\fonts\socicon.svg" />
+    <Content Include="assets\tether\tether.min.css" />
+    <Content Include="assets\tether\tether.min.js" />
+    <Content Include="assets\theme\css\style.css" />
+    <Content Include="assets\theme\js\script.js" />
+    <Content Include="assets\touch-swipe\jquery.touch-swipe.min.js" />
+    <Content Include="assets\viewport-checker\jquery.viewportchecker.js" />
+    <Content Include="assets\web\assets\jquery\jquery.min.js" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.css" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.svg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Rzuty\1A01.jpg" />
+    <Content Include="Rzuty\1A02.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="assets\images\hashes.json" />
+    <Content Include="assets\socicon\fonts\socicon.eot" />
+    <Content Include="assets\socicon\fonts\socicon.ttf" />
+    <Content Include="assets\socicon\fonts\socicon.woff" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -200,7 +301,137 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="unitegallery\css\unite-gallery.css" />
+    <Content Include="unitegallery\images\button-close.png" />
+    <Content Include="unitegallery\images\cover-grid.png" />
+    <Content Include="unitegallery\images\icon-link32.png" />
+    <Content Include="unitegallery\images\icon-play32.png" />
+    <Content Include="unitegallery\images\icon-zoom32.png" />
+    <Content Include="unitegallery\images\lightbox-arrow-left.png" />
+    <Content Include="unitegallery\images\lightbox-arrow-right.png" />
+    <Content Include="unitegallery\images\lightbox-icon-close-compact.png" />
+    <Content Include="unitegallery\images\lightbox-icon-close-compact2.png" />
+    <Content Include="unitegallery\images\lightbox-icon-close.png" />
+    <Content Include="unitegallery\images\loader-black1.gif" />
+    <Content Include="unitegallery\images\loader-black2.gif" />
+    <Content Include="unitegallery\images\loader-black3.gif" />
+    <Content Include="unitegallery\images\loader-black4.gif" />
+    <Content Include="unitegallery\images\loader-black5.gif" />
+    <Content Include="unitegallery\images\loader-black6.gif" />
+    <Content Include="unitegallery\images\loader-black7.gif" />
+    <Content Include="unitegallery\images\loader-white1.gif" />
+    <Content Include="unitegallery\images\loader-white2.gif" />
+    <Content Include="unitegallery\images\loader-white3.gif" />
+    <Content Include="unitegallery\images\loader-white4.gif" />
+    <Content Include="unitegallery\images\loader-white5.gif" />
+    <Content Include="unitegallery\images\loader-white6.gif" />
+    <Content Include="unitegallery\images\loader-white7.gif" />
+    <Content Include="unitegallery\images\loader.gif" />
+    <Content Include="unitegallery\images\loader_bright.gif" />
+    <Content Include="unitegallery\images\loader_skype_trans.gif" />
+    <Content Include="unitegallery\images\not_loaded.png" />
+    <Content Include="unitegallery\images\play-button-round.png" />
+    <Content Include="unitegallery\images\play-button-square.png" />
+    <Content Include="unitegallery\images\transparent.png" />
+    <Content Include="unitegallery\js\jquery-11.0.min.js" />
+    <Content Include="unitegallery\js\ug-api.js" />
+    <Content Include="unitegallery\js\ug-avia.js" />
+    <Content Include="unitegallery\js\ug-carousel.js" />
+    <Content Include="unitegallery\js\ug-common-libraries.js" />
+    <Content Include="unitegallery\js\ug-functions.js" />
+    <Content Include="unitegallery\js\ug-gallery.js" />
+    <Content Include="unitegallery\js\ug-gridpanel.js" />
+    <Content Include="unitegallery\js\ug-lightbox.js" />
+    <Content Include="unitegallery\js\ug-loadmore.js" />
+    <Content Include="unitegallery\js\ug-panelsbase.js" />
+    <Content Include="unitegallery\js\ug-slider.js" />
+    <Content Include="unitegallery\js\ug-sliderassets.js" />
+    <Content Include="unitegallery\js\ug-strippanel.js" />
+    <Content Include="unitegallery\js\ug-tabs.js" />
+    <Content Include="unitegallery\js\ug-thumbsgeneral.js" />
+    <Content Include="unitegallery\js\ug-thumbsgrid.js" />
+    <Content Include="unitegallery\js\ug-thumbsstrip.js" />
+    <Content Include="unitegallery\js\ug-tiledesign.js" />
+    <Content Include="unitegallery\js\ug-tiles.js" />
+    <Content Include="unitegallery\js\ug-touchslider.js" />
+    <Content Include="unitegallery\js\ug-touchthumbs.js" />
+    <Content Include="unitegallery\js\ug-video.js" />
+    <Content Include="unitegallery\js\ug-zoomslider.js" />
+    <Content Include="unitegallery\release_log.txt" />
+    <Content Include="unitegallery\skins\alexis\alexis.css" />
+    <Content Include="unitegallery\skins\alexis\images\arrows_strip_left.png" />
+    <Content Include="unitegallery\skins\alexis\images\arrows_strip_right.png" />
+    <Content Include="unitegallery\skins\alexis\images\button_fullscreen.png" />
+    <Content Include="unitegallery\skins\alexis\images\button_playpause.png" />
+    <Content Include="unitegallery\skins\alexis\images\button_zoom_back.png" />
+    <Content Include="unitegallery\skins\alexis\images\button_zoom_minus.png" />
+    <Content Include="unitegallery\skins\alexis\images\button_zoom_plus.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_down.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_left.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_left_hortype.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_right.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_right_hortype.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_arrow_up.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_handle_down.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_handle_left.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_handle_right.png" />
+    <Content Include="unitegallery\skins\alexis\images\grid_handle_up.png" />
+    <Content Include="unitegallery\skins\alexis\images\slider_arrow_left.png" />
+    <Content Include="unitegallery\skins\alexis\images\slider_arrow_right.png" />
+    <Content Include="unitegallery\skins\alexis\images\slider_bullets.png" />
+    <Content Include="unitegallery\skins\default\arrows_strip_down.png" />
+    <Content Include="unitegallery\skins\default\arrows_strip_left.png" />
+    <Content Include="unitegallery\skins\default\arrows_strip_right.png" />
+    <Content Include="unitegallery\skins\default\arrows_strip_up.png" />
+    <Content Include="unitegallery\skins\default\arrow_grid_down.png" />
+    <Content Include="unitegallery\skins\default\arrow_grid_up.png" />
+    <Content Include="unitegallery\skins\default\button_fullscreen.png" />
+    <Content Include="unitegallery\skins\default\button_playpause.png" />
+    <Content Include="unitegallery\skins\default\grid_arrow_left.png" />
+    <Content Include="unitegallery\skins\default\grid_arrow_right.png" />
+    <Content Include="unitegallery\skins\default\grid_handle_black_bottom.png" />
+    <Content Include="unitegallery\skins\default\grid_handle_black_left.png" />
+    <Content Include="unitegallery\skins\default\grid_handle_black_right.png" />
+    <Content Include="unitegallery\skins\default\grid_handle_black_top.png" />
+    <Content Include="unitegallery\skins\default\icon_zoom_back.png" />
+    <Content Include="unitegallery\skins\default\icon_zoom_minus.png" />
+    <Content Include="unitegallery\skins\default\icon_zoom_plus.png" />
+    <Content Include="unitegallery\skins\default\slider_arrow_left.png" />
+    <Content Include="unitegallery\skins\default\slider_arrow_right.png" />
+    <Content Include="unitegallery\skins\default\slider_bullets.png" />
+    <Content Include="unitegallery\skins\default\tile_bullets_blue.png" />
+    <Content Include="unitegallery\skins\default\tile_bullets_brown.png" />
+    <Content Include="unitegallery\skins\default\tile_bullets_gray.png" />
+    <Content Include="unitegallery\skins\default\tile_bullets_green.png" />
+    <Content Include="unitegallery\skins\default\tile_bullets_red.png" />
+    <Content Include="unitegallery\skins\default\tile_button_left.png" />
+    <Content Include="unitegallery\skins\default\tile_button_play_pause.png" />
+    <Content Include="unitegallery\skins\default\tile_button_right.png" />
+    <Content Include="unitegallery\themes\carousel\ug-theme-carousel.js" />
+    <Content Include="unitegallery\themes\compact\ug-theme-compact.js" />
+    <Content Include="unitegallery\themes\default\images\arrows_strip_left.png" />
+    <Content Include="unitegallery\themes\default\images\arrows_strip_right.png" />
+    <Content Include="unitegallery\themes\default\images\arrow_down_up.png" />
+    <Content Include="unitegallery\themes\default\images\button_fullscreen.png" />
+    <Content Include="unitegallery\themes\default\images\button_fullscreen_single.png" />
+    <Content Include="unitegallery\themes\default\images\button_playpause.png" />
+    <Content Include="unitegallery\themes\default\images\button_playpause_single.png" />
+    <Content Include="unitegallery\themes\default\ug-theme-default.css" />
+    <Content Include="unitegallery\themes\default\ug-theme-default.js" />
+    <Content Include="unitegallery\themes\grid\ug-theme-grid.js" />
+    <Content Include="unitegallery\themes\slider\ug-theme-slider.js" />
+    <Content Include="unitegallery\themes\tilesgrid\ug-theme-tilesgrid.js" />
+    <Content Include="unitegallery\themes\tiles\ug-theme-tiles.js" />
+    <Content Include="unitegallery\themes\video\images\arrow_left.png" />
+    <Content Include="unitegallery\themes\video\images\arrow_right.png" />
+    <Content Include="unitegallery\themes\video\skin-bottom-text.css" />
+    <Content Include="unitegallery\themes\video\skin-right-no-thumb.css" />
+    <Content Include="unitegallery\themes\video\skin-right-thumb.css" />
+    <Content Include="unitegallery\themes\video\skin-right-title-only.css" />
+    <Content Include="unitegallery\themes\video\ug-theme-video.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -234,17 +465,51 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Mieszkania\Create.cshtml" />
+    <Content Include="Views\Mieszkania\Delete.cshtml" />
+    <Content Include="Views\Mieszkania\Details.cshtml" />
+    <Content Include="Views\Mieszkania\Edit.cshtml" />
+    <Content Include="Views\Mieszkania\Index.cshtml" />
+    <Content Include="Views\Inwestycje\Create.cshtml" />
+    <Content Include="Views\Inwestycje\Delete.cshtml" />
+    <Content Include="Views\Inwestycje\Details.cshtml" />
+    <Content Include="Views\Inwestycje\Edit.cshtml" />
+    <Content Include="Views\Inwestycje\Index.cshtml" />
+    <Content Include="Views\Statusy\Create.cshtml" />
+    <Content Include="Views\Statusy\Delete.cshtml" />
+    <Content Include="Views\Statusy\Details.cshtml" />
+    <Content Include="Views\Statusy\Edit.cshtml" />
+    <Content Include="Views\Statusy\Index.cshtml" />
+    <Content Include="Views\Domy\Create.cshtml" />
+    <Content Include="Views\Domy\Delete.cshtml" />
+    <Content Include="Views\Domy\Details.cshtml" />
+    <Content Include="Views\Domy\Edit.cshtml" />
+    <Content Include="Views\Domy\Index.cshtml" />
+    <Content Include="Views\Shared\_MieszkaniaInwestycja.cshtml" />
+    <Content Include="Views\Shared\_DomyInwestycja.cshtml" />
+    <Content Include="Views\Shared\_LayoutSogo.cshtml" />
+    <Content Include="Views\Inwestycje\Details - Copy.cshtml" />
+    <Content Include="Views\Shared\_Mapa.cshtml" />
+    <Content Include="Views\Shared\_Kontakt.cshtml" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\Shared\_LayoutLtn.cshtml" />
+    <Content Include="Views\Shared\_LayoutKrzptw.cshtml" />
+    <Content Include="Views\Shared\_FeatureLtn.cshtml" />
+    <Content Include="Views\Shared\_FeatureKrzptw.cshtml" />
+    <Content Include="Views\Shared\_FeatureSogo.cshtml" />
+    <Content Include="Views\Shared\_GaleriaLtn.cshtml" />
+    <Content Include="Views\Shared\_WykonczenieLtn.cshtml" />
+    <Content Include="Views\Shared\_GaleriaKrzptw.cshtml" />
+    <Content Include="Views\Shared\_GaleriaSogo.cshtml" />
+    <Content Include="Views\Shared\_WykonczenieKrzptw.cshtml" />
+    <Content Include="Views\Shared\_WykonczenieSogo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

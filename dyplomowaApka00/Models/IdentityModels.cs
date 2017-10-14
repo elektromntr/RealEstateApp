@@ -25,6 +25,17 @@ namespace dyplomowaApka00.Models
         {
         }
 
+        //moje DbSety
+
+        public DbSet<Inwestycja> Inwestycje { get; set; }
+
+        public DbSet<Mieszkanie> Mieszkania { get; set; }
+        public DbSet<Dom> Domy { get; set; }
+
+        public DbSet<Status> Statusy { get; set; }
+
+        //koniec moich DbSetów
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

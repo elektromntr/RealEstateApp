@@ -1,0 +1,132 @@
+﻿@model dyplomowaApka00.Models.Inwestycja
+
+<script src="~/assets/data-tables/jquery.data-tables.min.js"></script>
+<script src="~/assets/data-tables/data-tables.bootstrap4.min.js"></script>
+<link rel="stylesheet" href="~/assets/data-tables/data-tables.bootstrap4.min.css" type="text/css">
+
+@if (Model.InwestycjaId == 1)
+{
+    Layout = "~/Views/Shared/_LayoutLtn.cshtml";
+}
+else if (Model.InwestycjaId == 2)
+{
+    Layout = "~/Views/Shared/_LayoutKrzptw.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_LayoutSogo.cshtml";
+}
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="header1 cid-qw2YPHwGm4 mbr-parallax-background" id="header1-s" data-rv-view="40">
+
+    <div class="mbr-overlay" style="opacity: 0.3;">
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">@Html.DisplayFor(model => model.Nazwa)</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*
+    <div>
+        <h4>Inwestycja</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nazwa)
+            </dd>
+
+        </dl>
+    </div>
+
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.InwestycjaId }) |
+        @Html.ActionLink("Zobacz inne inwestycje", "Index")
+    </div>
+*@
+<section id="feature">
+    <div>
+        @if (Model.InwestycjaId == 1)
+        {
+            @Html.Partial("_FeatureLtn")
+        }
+        else if (Model.InwestycjaId == 2)
+        {
+            @Html.Partial("_FeatureKrzptw")
+        }
+        else
+        {
+            @Html.Partial("_FeatureSogo")
+        }
+    </div>
+</section>
+<section id="tabele">
+    <div>
+        @{ Html.RenderAction("MieszkaniaZInwestycji"@*metoda*@, "Mieszkania"@*kontroler*@, new { id = Model.InwestycjaId }); }
+    </div>
+    <div>
+        @if (Model.Domy != null && Model.Domy.Any())
+        {
+            { Html.RenderAction("DomyZInwestycji", "Domy", new { id = Model.InwestycjaId }); }
+        }
+    </div>
+</section>
+<section id="galeria">
+    @*<section class="mbr-gallery mbr-slider-carousel cid-qw342TVBid" id="gallery3-u" data-rv-view="2015">
+        <div>
+            <div>
+                <!-- Filter --><!-- Gallery -->
+                <div class="mbr-gallery-row">
+                    <div class="mbr-gallery-layout-default">
+                        <div>
+                            <div>
+                                <div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Responsive"><div href="#lb-gallery3-u" data-slide-to="1" data-toggle="modal"><img src="~/assets/images/gallery01.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Creative"><div href="#lb-gallery3-u" data-slide-to="2" data-toggle="modal"><img src="~/assets/images/gallery02.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Animated"><div href="#lb-gallery3-u" data-slide-to="3" data-toggle="modal"><img src="~/assets/images/gallery03.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Awesome"><div href="#lb-gallery3-u" data-slide-to="4" data-toggle="modal"><img src="~/assets/images/gallery04.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Awesome"><div href="#lb-gallery3-u" data-slide-to="5" data-toggle="modal"><img src="~/assets/images/gallery05.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Responsive"><div href="#lb-gallery3-u" data-slide-to="6" data-toggle="modal"><img src="~/assets/images/gallery06.jpg" alt=""><span class="icon-focus"></span></div></div><div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Animated"><div href="#lb-gallery3-u" data-slide-to="7" data-toggle="modal"><img src="~/assets/images/gallery07.jpg" alt=""><span class="icon-focus"></span></div></div>
+                            </div>
+                        </div><div class="clearfix"></div>
+                    </div>
+                </div><!-- Lightbox --><div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery3-u"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div class="carousel-inner"><div class="carousel-item active video-container"><img src="~/assets/images/gallery00.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery01.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery02.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery03.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery04.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery05.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery06.jpg" alt=""></div><div class="carousel-item"><img src="~/assets/images/gallery07.jpg" alt=""></div></div><a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery3-u"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery3-u"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a><a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a></div></div></div></div>
+            </div>
+        </div>
+    </section>*@
+    <div>
+        @if (Model.InwestycjaId == 1)
+        {
+            @Html.Partial("_GaleriaLtn")
+        }
+        else if (Model.InwestycjaId == 2)
+        {
+            @Html.Partial("_GaleriaKrzptw")
+        }
+        else
+        {
+            @Html.Partial("_GaleriaSogo")
+        }
+    </div>
+</section>
+<section id="wykonczenie">
+    <div>
+        @if (Model.InwestycjaId == 1)
+        {
+            @Html.Partial("_WykonczenieLtn")
+        }
+        else if (Model.InwestycjaId == 2)
+        {
+            @Html.Partial("_WykonczenieKrzptw")
+        }
+        else
+        {
+            @Html.Partial("_WykonczenieSogo")
+        }
+    </div>
+</section>

@@ -1,0 +1,47 @@
+﻿
+<script type='text/javascript' src='~/unitegallery/js/unitegallery.min.js'></script>
+
+<link rel='stylesheet' href='~/unitegallery/css/unite-gallery.css' type='text/css' />
+<script type='text/javascript' src='~/unitegallery/themes/default/ug-theme-default.js'></script>
+<script type='text/javascript' src='~/unitegallery/themes/slider/ug-theme-slider.js'></script>
+<link rel='stylesheet' href='~/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+
+
+<section>
+
+    <div id="gallery" style="display:none;">
+
+        @*<img alt="Image 1 Title" src="~/assets/images/fotolia-103141139-subscription-monthly-m-1690x1124.jpg"
+             data-image="/assets/images/01.jpg"
+             data-description="Image 1 Description">
+
+        <img alt="Image 2 Title" src="~/assets/images/krzeptowWiz04.jpg"
+             data-image="/assets/images/02.jpg"
+             data-description="Image 2 Description">*@
+
+        @for (int i = 0; i < 10; i++)
+        {
+            string urlZGalerii = "/assets/images/krzeptow/krzeptow" + i + ".jpg";
+            string altZGalerii = "krzeptów" + i + ".jpg";
+            <img alt= @altZGalerii src = "@urlZGalerii" />
+        }
+        
+
+    </div>
+
+</section>
+
+<script type="text/javascript">
+
+
+			jQuery(document).ready(function(){
+			    jQuery("#gallery").unitegallery({
+			        gallery_theme: "slider",
+                    theme_enable_fullscreen_button: true,
+                    gallery_width: 1920,
+                    gallery_height: 900,
+                    slider_control_zoom: false,
+			    });
+			});
+
+</script>
