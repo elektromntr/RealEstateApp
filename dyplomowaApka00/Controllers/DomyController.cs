@@ -17,7 +17,6 @@ namespace dyplomowaApka00.Controllers
         // markowy partial
         public ActionResult DomyZInwestycji(int? id, string niedostepne)
         {
-            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
             var domy = db.Domy.Where(p => p.InwestycjaId > 0);
             //if (mieszkania == null) RedirectToAction("Index", "Home");
 
@@ -30,6 +29,7 @@ namespace dyplomowaApka00.Controllers
                 domy = db.Domy.Where(p => p.InwestycjaId == id);
             }
 
+            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
             switch (niedostepne)
             {
                 case "ukryj":

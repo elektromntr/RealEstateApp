@@ -58,7 +58,7 @@ namespace dyplomowaApka00.Models
         {
             get
             {
-                return SymbolDomu;
+                return "/Rzuty/" + SymbolDomu + ".jpg";
             }
             set
             {

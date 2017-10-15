@@ -53,6 +53,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\Microsoft.WindowsAzure.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -112,6 +120,14 @@
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsAzureEventSource, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\WindowsAzureEventSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsAzureTelemetryEvents, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\WindowsAzureTelemetryEvents.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -224,6 +240,18 @@
     <Content Include="assets\images\gallery07.jpg" />
     <Content Include="assets\images\jumbotron.jpg" />
     <Content Include="assets\images\krzeptowWiz04.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow0.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow1.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow10.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow11.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow2.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow3.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow4.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow5.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow6.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow7.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow8.jpg" />
+    <Content Include="assets\images\krzeptow\krzeptow9.jpg" />
     <Content Include="assets\images\logo2.png" />
     <Content Include="assets\images\logo20.png" />
     <Content Include="assets\images\logo21.png" />
@@ -231,8 +259,22 @@
     <Content Include="assets\images\logo23.png" />
     <Content Include="assets\images\logo24.png" />
     <Content Include="assets\images\logo25.png" />
+    <Content Include="assets\images\logoKrzeptow.svg" />
+    <Content Include="assets\images\logoLtn.svg" />
     <Content Include="assets\images\logosogo-230x53.png" />
     <Content Include="assets\images\lutynia-pogodna-4-1024x512.jpg" />
+    <Content Include="assets\images\lutynia\lutynia0.jpg" />
+    <Content Include="assets\images\lutynia\lutynia1.jpg" />
+    <Content Include="assets\images\lutynia\lutynia10.jpg" />
+    <Content Include="assets\images\lutynia\lutynia11.jpg" />
+    <Content Include="assets\images\lutynia\lutynia2.jpg" />
+    <Content Include="assets\images\lutynia\lutynia3.jpg" />
+    <Content Include="assets\images\lutynia\lutynia4.jpg" />
+    <Content Include="assets\images\lutynia\lutynia5.jpg" />
+    <Content Include="assets\images\lutynia\lutynia6.jpg" />
+    <Content Include="assets\images\lutynia\lutynia7.jpg" />
+    <Content Include="assets\images\lutynia\lutynia8.jpg" />
+    <Content Include="assets\images\lutynia\lutynia9.jpg" />
     <Content Include="assets\images\mbr-favicon.png" />
     <Content Include="assets\images\logoSogo.svg" />
     <Content Include="assets\jarallax\jarallax.min.js" />
@@ -243,6 +285,7 @@
     <Content Include="assets\mobirise-gallery\style.css" />
     <Content Include="assets\mobirise-slider-video\script.js" />
     <Content Include="assets\mobirise\css\mbr-additional-Krzptw.css" />
+    <Content Include="assets\mobirise\css\mbr-additional-Krzptw.min.css" />
     <Content Include="assets\mobirise\css\mbr-additional-Ltn.css" />
     <Content Include="assets\mobirise\css\mbr-additional.css" />
     <Content Include="assets\popper\popper.min.js" />
@@ -276,6 +319,43 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Rzuty\1A01.jpg" />
     <Content Include="Rzuty\1A02.jpg" />
+    <Content Include="Rzuty\1A03.jpg" />
+    <Content Include="Rzuty\1A04.jpg" />
+    <Content Include="Rzuty\1A10.jpg" />
+    <Content Include="Rzuty\1A11.jpg" />
+    <Content Include="Rzuty\1A12.jpg" />
+    <Content Include="Rzuty\1A19.jpg" />
+    <Content Include="Rzuty\1B01.jpg" />
+    <Content Include="Rzuty\1B02.jpg" />
+    <Content Include="Rzuty\1B03.jpg" />
+    <Content Include="Rzuty\1B04.jpg" />
+    <Content Include="Rzuty\1B05.jpg" />
+    <Content Include="Rzuty\1B06.jpg" />
+    <Content Include="Rzuty\1B07.jpg" />
+    <Content Include="Rzuty\1B08.jpg" />
+    <Content Include="Rzuty\1B09.jpg" />
+    <Content Include="Rzuty\1B10.jpg" />
+    <Content Include="Rzuty\1B11.jpg" />
+    <Content Include="Rzuty\1B30.jpg" />
+    <Content Include="Rzuty\1D02.jpg" />
+    <Content Include="Rzuty\1D03.jpg" />
+    <Content Include="Rzuty\1D04.jpg" />
+    <Content Include="Rzuty\1D05.jpg" />
+    <Content Include="Rzuty\1D06.jpg" />
+    <Content Include="Rzuty\1D07.jpg" />
+    <Content Include="Rzuty\1D08.jpg" />
+    <Content Include="Rzuty\1D09.jpg" />
+    <Content Include="Rzuty\1D10.jpg" />
+    <Content Include="Rzuty\1D11.jpg" />
+    <Content Include="Rzuty\1D12.jpg" />
+    <Content Include="Rzuty\1D13.jpg" />
+    <Content Include="Rzuty\1D14.jpg" />
+    <Content Include="Rzuty\1D15.jpg" />
+    <Content Include="Rzuty\1D16.jpg" />
+    <Content Include="Rzuty\1D17.jpg" />
+    <Content Include="Rzuty\1D18.jpg" />
+    <Content Include="Rzuty\1D19.jpg" />
+    <Content Include="Rzuty\1D20.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\images\hashes.json" />
@@ -285,6 +365,11 @@
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
+    <None Include="Properties\PublishProfiles\ablab.aspnet.pl - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\bwsoablab - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\bwsoablab - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bwsoablab - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\bwsoablab - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -357,6 +442,8 @@
     <Content Include="unitegallery\js\ug-touchthumbs.js" />
     <Content Include="unitegallery\js\ug-video.js" />
     <Content Include="unitegallery\js\ug-zoomslider.js" />
+    <Content Include="unitegallery\js\unitegallery.js" />
+    <Content Include="unitegallery\js\unitegallery.min.js" />
     <Content Include="unitegallery\release_log.txt" />
     <Content Include="unitegallery\skins\alexis\alexis.css" />
     <Content Include="unitegallery\skins\alexis\images\arrows_strip_left.png" />
@@ -437,6 +524,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />

@@ -50,6 +50,7 @@
 /// <reference path="../unitegallery/js/ug-touchthumbs.js" />
 /// <reference path="../unitegallery/js/ug-video.js" />
 /// <reference path="../unitegallery/js/ug-zoomslider.js" />
+/// <reference path="../unitegallery/js/unitegallery.js" />
 /// <reference path="../unitegallery/themes/carousel/ug-theme-carousel.js" />
 /// <reference path="../unitegallery/themes/compact/ug-theme-compact.js" />
 /// <reference path="../unitegallery/themes/default/ug-theme-default.js" />
