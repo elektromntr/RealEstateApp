@@ -15,39 +15,43 @@ namespace dyplomowaApka00.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // markowy partial
+        //public ActionResult MieszkaniaZInwestycji(string niedostepne, int? id = 1)
         public ActionResult MieszkaniaZInwestycji(int? id, string niedostepne)
         {
-            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
-            var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0);
+            
+            //var mieszkania = db.Mieszkania;
+            var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId == id );
             //if (mieszkania == null) RedirectToAction("Index", "Home");
 
-            if (id == null)
+            /*if (id == null)
             {
                 mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0);
             }
             else
             {
                 mieszkania = db.Mieszkania.Where(p => p.InwestycjaId == id);
-            }
+            }*/
+
+            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
 
             switch (niedostepne)
             {
                 case "ukryj":
-                    mieszkania = db.Mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
                     break;
                 default:
-                    mieszkania = db.Mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId >0 powoduje wyświetlanie mieszkań ze statusem wszystkie
                     break;
-            }
+            } 
 
             return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
         }
 
         // GET: Mieszkania
-        public ActionResult Index(string sortOrder, string niedostepne)
+        public ActionResult Index(string niedostepne)
         {
             ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
-            var Mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+            var Mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
 
             switch (niedostepne)
             {

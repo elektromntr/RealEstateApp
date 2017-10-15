@@ -33,18 +33,18 @@ namespace dyplomowaApka00.Controllers
             switch (niedostepne)
             {
                 case "ukryj":
-                    domy = db.Domy.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    domy = domy.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
                     break;
                 default:
-                    domy = db.Domy.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    domy = domy.Where(m => m.StatusId > 0); // StatusId > 0 powoduje wyświetlanie mieszkań wszystkich
                     break;
             }
 
             return PartialView("_DomyInwestycja", domy.ToList());
         }
 
-        // GET: Mieszkania
-        public ActionResult Index(string sortOrder, string niedostepne)
+        // GET: Domy
+        public ActionResult Index(string niedostepne)
         {
             ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
             var domy = db.Domy.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
