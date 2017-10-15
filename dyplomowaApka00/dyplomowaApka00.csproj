@@ -576,10 +576,8 @@
     <Content Include="Views\Shared\_MieszkaniaInwestycja.cshtml" />
     <Content Include="Views\Shared\_DomyInwestycja.cshtml" />
     <Content Include="Views\Shared\_LayoutSogo.cshtml" />
-    <Content Include="Views\Inwestycje\Details - Copy.cshtml" />
     <Content Include="Views\Shared\_Mapa.cshtml" />
     <Content Include="Views\Shared\_Kontakt.cshtml" />
-    <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\Shared\_LayoutLtn.cshtml" />
     <Content Include="Views\Shared\_LayoutKrzptw.cshtml" />
     <Content Include="Views\Shared\_FeatureLtn.cshtml" />

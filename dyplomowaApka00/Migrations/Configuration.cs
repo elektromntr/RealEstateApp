@@ -16,18 +16,7 @@ namespace dyplomowaApka00.Migrations
 
         protected override void Seed(dyplomowaApka00.Models.ApplicationDbContext context)
         {
-            /*context.Statusy.AddOrUpdate(
-                s => s.StatusId,
-                new Status { StatusId = 1, Nazwa = "Wolne" },
-                new Status { StatusId = 2, Nazwa = "Sprzedane" },
-                new Status { StatusId = 3, Nazwa = "Rezerwacja" },
-                new Status { StatusId = 4, Nazwa = "Pokazowe" },
-                );
-            context.Inwestycje.AddOrUpdate(
-                i => i.InwestycjaId,
-                new Inwestycja { InwestycjaId = 1, Nazwa = "Osiedle Lutynia" },
-                new Inwestycja { InwestycjaId = 2, Nazwa = "Osiedle Krzeptów" },
-                );*/
+            
 
             //  This method will be called after migrating to the latest version.
 

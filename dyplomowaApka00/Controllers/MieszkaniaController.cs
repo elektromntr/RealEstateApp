@@ -14,14 +14,14 @@ namespace dyplomowaApka00.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // markowy partial
-        //public ActionResult MieszkaniaZInwestycji(string niedostepne, int? id = 1)
+        
+        
         public ActionResult MieszkaniaZInwestycji(int? id, string niedostepne)
         {
             
-            //var mieszkania = db.Mieszkania;
+            
             var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0 );
-            //if (mieszkania == null) RedirectToAction("Index", "Home");
+            
 
             if (id == null)
             {

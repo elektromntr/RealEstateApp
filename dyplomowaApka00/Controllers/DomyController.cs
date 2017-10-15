@@ -18,7 +18,7 @@ namespace dyplomowaApka00.Controllers
         public ActionResult DomyZInwestycji(int? id, string niedostepne)
         {
             var domy = db.Domy.Where(p => p.InwestycjaId > 0);
-            //if (mieszkania == null) RedirectToAction("Index", "Home");
+            
 
             if (id == null)
             {

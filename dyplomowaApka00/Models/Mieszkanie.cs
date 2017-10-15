@@ -32,7 +32,7 @@ namespace dyplomowaApka00.Models
         [Required(ErrorMessage = "Proszę podać cenę mieszkania")]
         [DataType(DataType.Currency)]
         public decimal Cena { get; set; }
-        //public uint Cena { get; set; }
+        
 
         [Required(ErrorMessage = "Proszę podać poziom mieszkania")]
         public byte Poziom { get; set; }
@@ -84,45 +84,4 @@ namespace dyplomowaApka00.Models
     } //class Mieszkanie
 } //namespace
 
-        /*public int? Rodzaj { get; set; }
-
-
-
-        [DisplayName("Powierzchnia w metrach kwadratowych")]
-        public short Powierzchnia { get; set; }
-
-        [DisplayName("Ilość pokoi")]
-        public char IloscPokoi { get; set; }
-
-        public char Kondygnacja { get; set; }
-
-        [DisplayName("Cena w PLN")]
-        public int Cena { get; set; }
-
-        public bool Wolne { get; set; }
-
-        [DisplayName("Ogród")]
-        public bool Ogrod { get; set; }
-
-        public bool Antresola { get; set; }
-    }
-}
-
-/*MieszkanieID PK int
-SybolMieszkania string
-Inwestycja string FK >- Inwestycja.InwestycjaID
-Status string FK >- Status.StatusID
-Cena int
-Poziom char
-Powierzchnia short
-Pokoje char
-Ogrod int
-Antresola bool
-Garaz bool
-TerminRealizacji data
-MiejscePostojowe bool
-KomorkaLokatorska bool
-DodatkoweInfo string
-
         
-        */

@@ -22,7 +22,7 @@
     </div>
 </section>
 <div>
-    @{ Html.RenderAction("DomyZInwestycji"@*metoda*@, "Domy"@*kontroler*@); }
+    @{ Html.RenderAction("DomyZInwestycji", "Domy"); }
 </div>
 <div class="text-center">
     @if (HttpContext.Current.Request.Url.AbsoluteUri.Contains("ukryj"))
