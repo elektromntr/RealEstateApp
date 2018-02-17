@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dyplomowaApka00.Models
 {
-    public class Mieszkanie
+    public class Mieszkanie  
     {
         [Key]
         public int MieszkanieId { get; set; }
