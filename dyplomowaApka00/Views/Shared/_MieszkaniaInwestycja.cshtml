@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<dyplomowaApka00.Models.Mieszkanie>
 
+
 <section class="section-table cid-qvZiwymKFt" id="table1-n" data-rv-view="1454">
 
     <div class="container container-table">
@@ -10,7 +11,7 @@
             Zobacz wszystkie mieszkania w ofercie
         </h3>
         <p class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-7">
-            
+
         </p>
         <div class="table-wrapper">
             <div class="container">
@@ -24,7 +25,7 @@
 
 
 
-                            
+
                             <th class="head-item mbr-fonts-style display-7">
                                 @Html.DisplayNameFor(model => model.SymbolMieszkania)
                             </th>
@@ -51,20 +52,54 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                     @foreach (var item in Model)
                     {
                         <tr>
-                            
+
                             <td class="body-item mbr-fonts-style display-7">
                                 @Html.DisplayFor(modelItem => item.SymbolMieszkania)
                             </td>
-                            <td class="body-item mbr-fonts-style display-7">
-                                @Html.DisplayFor(modelItem => item.Status.Nazwa)
-                            </td>
-                            <td class="body-item mbr-fonts-style display-7">
-                                @Html.DisplayFor(modelItem => item.Cena)
-                            </td>
+                            <!--tutaj nastepuje zmiana koloru tła zależnie od statusu-->
+                            @if (item.Status.StatusId == 1)
+                            {
+                                <td class="body-item mbr-fonts-style display-7 wolne">
+                                    @Html.DisplayFor(modelItem => item.Status.Nazwa)
+                                </td>
+                            }
+                            else if (item.Status.StatusId == 2)
+                            {
+                                <td class="body-item mbr-fonts-style display-7 rezerwacja">
+                                    @Html.DisplayFor(modelItem => item.Status.Nazwa)
+                                </td>
+                            }
+                            else if (item.Status.StatusId == 4)
+                            {
+                                <td class="body-item mbr-fonts-style display-7 sprzedane">
+                                    @Html.DisplayFor(modelItem => item.Status.Nazwa)
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="body-item mbr-fonts-style display-7">
+                                    @Html.DisplayFor(modelItem => item.Status.Nazwa)
+                                </td>
+                            }
+                            <!--koniec zmiany tła-->
+                            <!--ukrycie ceny jeśli statu Sprzedane-->
+                            @if (item.Status.StatusId == 4)
+                            {
+                                <td class="body-item mbr-fonts-style display-7">
+                                    —
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="body-item mbr-fonts-style display-7">
+                                    @Html.DisplayFor(modelItem => item.Cena)
+                                </td>
+                            }
+                            <!--koniec ukrycia ceny-->
                             <td class="body-item mbr-fonts-style display-7">
                                 @Html.DisplayFor(modelItem => item.Poziom)
                             </td>

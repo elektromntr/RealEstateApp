@@ -292,6 +292,7 @@
     <Content Include="assets\smooth-scroll\smooth-scroll.js" />
     <Content Include="assets\socicon\css\styles.css" />
     <Content Include="assets\socicon\fonts\socicon.svg" />
+    <Content Include="assets\sogo\sogoTabela.css" />
     <Content Include="assets\tether\tether.min.css" />
     <Content Include="assets\tether\tether.min.js" />
     <Content Include="assets\theme\css\style.css" />
