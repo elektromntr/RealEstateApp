@@ -189,6 +189,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DomyController.cs" />
+    <Compile Include="Controllers\EtapyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InwestycjeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dom.cs" />
+    <Compile Include="Models\Etap.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inwestycja.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -590,6 +592,11 @@
     <Content Include="Views\Shared\_GaleriaSogo.cshtml" />
     <Content Include="Views\Shared\_WykonczenieKrzptw.cshtml" />
     <Content Include="Views\Shared\_WykonczenieSogo.cshtml" />
+    <Content Include="Views\Etapy\Create.cshtml" />
+    <Content Include="Views\Etapy\Delete.cshtml" />
+    <Content Include="Views\Etapy\Details.cshtml" />
+    <Content Include="Views\Etapy\Edit.cshtml" />
+    <Content Include="Views\Etapy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
