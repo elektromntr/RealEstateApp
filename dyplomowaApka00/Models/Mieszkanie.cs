@@ -70,12 +70,25 @@ namespace dyplomowaApka00.Models
         [DataType(DataType.Date)]
         public DateTime TerminRealizacji { get; set; }
 
-        [DisplayName("Rzut")]
+        [DisplayName("Rzut JPG")]
         public string ImageFile  
         {
             get
             {
                 return "/Rzuty/" + SymbolMieszkania + ".jpg"; 
+            }
+            set
+            {
+
+            }
+        }
+
+        [DisplayName("Rzut PDF")]
+        public string PDFFile
+        {
+            get
+            {
+                return "/Rzuty/" + SymbolMieszkania + ".pdf";
             }
             set
             {
