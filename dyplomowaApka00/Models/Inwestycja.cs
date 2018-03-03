@@ -18,28 +18,28 @@ namespace dyplomowaApka00.Models
 
         [MaxLength(140)]
         [DataType(DataType.MultilineText)]
-        public string HeaaderOne { get; set; }
+        public string HeaderOne { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string DescOne { get; set; }
 
         [MaxLength(140)]
         [DataType(DataType.MultilineText)]
-        public string HeaaderTwo { get; set; }
+        public string HeaderTwo { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string DescTwo { get; set; }
 
         [MaxLength(140)]
         [DataType(DataType.MultilineText)]
-        public string HeaaderThree { get; set; }
+        public string HeaderThree { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string DescThree { get; set; }
 
         [MaxLength(140)]
         [DataType(DataType.MultilineText)]
-        public string HeaaderFour { get; set; }
+        public string HeaderFour { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string DescFour { get; set; }

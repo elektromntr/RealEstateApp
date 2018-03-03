@@ -583,8 +583,7 @@
     <Content Include="Views\Shared\_Kontakt.cshtml" />
     <Content Include="Views\Shared\_LayoutLtn.cshtml" />
     <Content Include="Views\Shared\_LayoutKrzptw.cshtml" />
-    <Content Include="Views\Shared\_FeatureLtn.cshtml" />
-    <Content Include="Views\Shared\_FeatureKrzptw.cshtml" />
+    <Content Include="Views\Shared\_Feature.cshtml" />
     <Content Include="Views\Shared\_FeatureSogo.cshtml" />
     <Content Include="Views\Shared\_GaleriaLtn.cshtml" />
     <Content Include="Views\Shared\_WykonczenieLtn.cshtml" />

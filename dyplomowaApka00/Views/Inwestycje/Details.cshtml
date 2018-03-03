@@ -35,32 +35,13 @@ else
     </div>
 </section>
 
-
-<section id="feature">
-    <div>
-        @if (Model.InwestycjaId == 1)
-        {
-            @Html.Partial("_FeatureLtn")
-        }
-        else if (Model.InwestycjaId == 2)
-        {
-            @Html.Partial("_FeatureKrzptw")
-        }
-        else
-        {
-            @Html.Partial("_FeatureSogo")
-        }
-    </div>
+<section id="featureTest">
+    @Html.Partial("_Feature")
 </section>
+
 <section id="tabele">
     <div>
         @{ Html.RenderAction("MieszkaniaZInwestycji", "Mieszkania", new { id = Model.InwestycjaId }); }
-    </div>
-    <div>
-        @if (Model.Domy != null && Model.Domy.Any())
-        {
-            { Html.RenderAction("DomyZInwestycji", "Domy", new { id = Model.InwestycjaId }); }
-        }
     </div>
 </section>
 <section id="galeria">

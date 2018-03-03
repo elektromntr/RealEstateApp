@@ -35,7 +35,6 @@ namespace dyplomowaApka00.Controllers
             return View(inwestycja);
         }
 
-        [Authorize(Roles = "Admin")]
         // GET: Inwestycje/Create
         public ActionResult Create()
         {
@@ -47,7 +46,7 @@ namespace dyplomowaApka00.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InwestycjaId,Nazwa")] Inwestycja inwestycja)
+        public ActionResult Create([Bind(Include = "InwestycjaId,Nazwa,HeaderOne,DescOne,HeaderTwo,DescTwo,HeaderThree,DescThree,HeaderFour,DescFour")] Inwestycja inwestycja)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +58,6 @@ namespace dyplomowaApka00.Controllers
             return View(inwestycja);
         }
 
-        [Authorize(Roles = "Operator, Admin")]
         // GET: Inwestycje/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -80,7 +78,7 @@ namespace dyplomowaApka00.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InwestycjaId,Nazwa")] Inwestycja inwestycja)
+        public ActionResult Edit([Bind(Include = "InwestycjaId,Nazwa,HeaderOne,DescOne,HeaderTwo,DescTwo,HeaderThree,DescThree,HeaderFour,DescFour")] Inwestycja inwestycja)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +89,6 @@ namespace dyplomowaApka00.Controllers
             return View(inwestycja);
         }
 
-        [Authorize(Roles = "Admin")]
         // GET: Inwestycje/Delete/5
         public ActionResult Delete(int? id)
         {
