@@ -43,6 +43,16 @@ else
     <div>
         @{ Html.RenderAction("MieszkaniaZInwestycji", "Mieszkania", new { id = Model.InwestycjaId }); }
     </div>
+    <div class="text-center">
+    @if (HttpContext.Current.Request.Url.AbsoluteUri.Contains("ukryj"))
+    {
+        @Html.ActionLink("Pokaż niedostępne", "Details", new { niedostepne = ViewBag.UkryjPokaz })
+    }
+    else
+    {
+        @Html.ActionLink("Ukryj niedostępne", "Details", new { niedostepne = ViewBag.UkryjPokaz })
+    }
+    </div>
 </section>
 <section id="galeria">
     <div>
