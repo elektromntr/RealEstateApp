@@ -34,7 +34,36 @@ namespace dyplomowaApka00.Controllers
             switch (niedostepne)
             {
                 case "ukryj":
-                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 4 powoduje wyświetlanie mieszkań wolnych
+                    break;
+                default:
+                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    break;
+            }
+
+            return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
+        }
+
+        public ActionResult MieszkaniaZEtapu(int? id, string niedostepne)
+        {
+
+            var mieszkania = db.Mieszkania.Where(p => p.EtapId > 0);
+            //ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
+            //if (mieszkania == null) RedirectToAction("Index", "Home");
+
+            if (id == null)
+            {
+                mieszkania = db.Mieszkania.Where(p => p.EtapId > 0);
+            }
+            else
+            {
+                mieszkania = db.Mieszkania.Where(p => p.EtapId == id);
+            }
+
+            switch (niedostepne)
+            {
+                case "ukryj":
+                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 4 powoduje wyświetlanie mieszkań wolnych
                     break;
                 default:
                     mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
