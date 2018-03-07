@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <includesetaclproviderondestination>False</includesetaclproviderondestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -368,6 +369,7 @@
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
+    <None Include="Properties\PublishProfiles\ablab.aspnet.pl - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ablab.aspnet.pl - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\bwsoablab - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\bwsoablab - FTP.pubxml" />
