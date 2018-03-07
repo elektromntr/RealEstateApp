@@ -16,12 +16,36 @@ namespace dyplomowaApka00.Models
         [DisplayName("Inwestycja")]
         public string Nazwa { get; set; }
 
-        /*[DisplayName("Data rozpoczęcia inwestycji")]
-        [DataType(DataType.Date)]
-        public DateTime DataRozpoczecia { get; set; }*/
+        [MaxLength(140)]
+        [DataType(DataType.MultilineText)]
+        public string HeaderOne { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string DescOne { get; set; }
+
+        [MaxLength(140)]
+        [DataType(DataType.MultilineText)]
+        public string HeaderTwo { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string DescTwo { get; set; }
+
+        [MaxLength(140)]
+        [DataType(DataType.MultilineText)]
+        public string HeaderThree { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string DescThree { get; set; }
+
+        [MaxLength(140)]
+        [DataType(DataType.MultilineText)]
+        public string HeaderFour { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string DescFour { get; set; }
 
         virtual public ICollection<Mieszkanie> Mieszkania { get; set; }
 
-        virtual public ICollection<Dom> Domy { get; set; }
+        virtual public ICollection<Etap> Etapy { get; set; }
     }
 }

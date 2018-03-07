@@ -16,12 +16,21 @@ namespace dyplomowaApka00.Models
         [Required(ErrorMessage = "Proszę podać symbol mieszkania")]
         public string SymbolMieszkania { get; set; }
 
+        // tutaj zapisujemy Etapy: Rondo XI, Rondo XII, Pogodna, Tarasy itp
+        public int? EtapId { get; set; }
+
+        [ForeignKey("EtapId")]
+        [DisplayName("Etap")]
+        public virtual Etap Etap { get; set; }
+
+        // tutaj zapisujemy Inwestycje: Lutynia, Smolec, Krzeptów itp.
         public int? InwestycjaId { get; set; }
 
         [ForeignKey("InwestycjaId")]
         [DisplayName("Inwestycja")]
         public virtual Inwestycja Inwestycja { get; set; }
 
+        // tutaj zapisuje Statusy nieruchomości
         public int? StatusId { get; set; }
 
         [ForeignKey("StatusId")]
@@ -61,12 +70,25 @@ namespace dyplomowaApka00.Models
         [DataType(DataType.Date)]
         public DateTime TerminRealizacji { get; set; }
 
-        [DisplayName("Rzut")]
+        [DisplayName("Rzut JPG")]
         public string ImageFile  
         {
             get
             {
                 return "/Rzuty/" + SymbolMieszkania + ".jpg"; 
+            }
+            set
+            {
+
+            }
+        }
+
+        [DisplayName("Rzut PDF")]
+        public string PDFFile
+        {
+            get
+            {
+                return "/Rzuty/" + SymbolMieszkania + ".pdf";
             }
             set
             {

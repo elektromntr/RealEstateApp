@@ -1,32 +1,26 @@
-﻿
-<script type='text/javascript' src='~/unitegallery/js/unitegallery.min.js'></script>
+﻿<script type='text/javascript' src='~/unitegallery/js/unitegallery.min.js'></script>
 
 <link rel='stylesheet' href='~/unitegallery/css/unite-gallery.css' type='text/css' />
 <script type='text/javascript' src='~/unitegallery/themes/default/ug-theme-default.js'></script>
 <script type='text/javascript' src='~/unitegallery/themes/slider/ug-theme-slider.js'></script>
 <link rel='stylesheet' href='~/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
 
-
 <section>
 
-    <div id="gallery" style="display:none;">
-
-        
+    <div id="gallery" style="display:none;">    
 
         @for (int i = 0; i < 10; i++)
         {
             string urlZGalerii = "/assets/images/lutynia/lutynia" + i + ".jpg";
-            string altZGalerii = "krzeptów" + i + ".jpg";
+            string altZGalerii = "lutynia" + i + ".jpg";
             <img alt=@altZGalerii src="@urlZGalerii" />
         }
-
-
+        
     </div>
 
 </section>
 
 <script type="text/javascript">
-
 
 			jQuery(document).ready(function(){
 			    jQuery("#gallery").unitegallery({

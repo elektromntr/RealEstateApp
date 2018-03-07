@@ -14,14 +14,13 @@ namespace dyplomowaApka00.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
-        
+        // markowy partial
         public ActionResult MieszkaniaZInwestycji(int? id, string niedostepne)
         {
             
-            
-            var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0 );
-            
+            var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0);
+            //ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
+            //if (mieszkania == null) RedirectToAction("Index", "Home");
 
             if (id == null)
             {
@@ -31,26 +30,6 @@ namespace dyplomowaApka00.Controllers
             {
                 mieszkania = db.Mieszkania.Where(p => p.InwestycjaId == id);
             }
-
-            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
-            switch (niedostepne)
-            {
-                case "ukryj":
-                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
-                    break;
-                default:
-                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId >0 powoduje wyświetlanie mieszkań ze statusem wszystkie
-                    break;
-            } 
-
-            return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
-        }
-
-        // GET: Mieszkania
-        public ActionResult Index(string niedostepne)
-        {
-            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
-            var mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
 
             switch (niedostepne)
             {
@@ -62,7 +41,28 @@ namespace dyplomowaApka00.Controllers
                     break;
             }
 
-            return View(mieszkania.ToList());
+            return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
+        }
+
+        // GET: Mieszkania
+        public ActionResult Index(string niedostepne)
+        {
+            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
+            var mieszkania = db.Mieszkania.Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+
+            switch (niedostepne)
+            {
+                case "ukryj":
+                    mieszkania = db.Mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    //mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    break;
+                default:
+                    mieszkania = db.Mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    //mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    break;
+            }
+
+            return View(db.Mieszkania.ToList());
         }
 
         // GET: Mieszkania/Details/5

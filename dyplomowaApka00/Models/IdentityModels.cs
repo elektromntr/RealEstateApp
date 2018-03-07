@@ -40,5 +40,7 @@ namespace dyplomowaApka00.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<dyplomowaApka00.Models.Etap> Etaps { get; set; }
     }
 }

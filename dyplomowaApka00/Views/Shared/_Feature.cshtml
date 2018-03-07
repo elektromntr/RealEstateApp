@@ -1,14 +1,16 @@
-﻿<section class="features4 cid-qw35n9Gs94" id="features4-w" data-rv-view="43">
+﻿@model dyplomowaApka00.Models.Inwestycja
+
+<section class="features4 cid-qw35n9Gs94" id="features4-w" data-rv-view="43">
     <div class="container">
         <div class="media-container-row">
             <div class="card p-3 col-12 col-md-6 col-lg-3">
                 <div class="card-wrapper media-container-row media-container-row">
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            Zapraszamy
+                            @Html.DisplayFor(model => model.HeaderOne)
                         </h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Zapraszamy do zapoznania się z ofertą Osiedla Lutynia (okolica Wrocławia), gdzie każde mieszkanie spełnia warunki dopłaty programu Mieszkanie Dla Młodych.
+                            @Html.DisplayFor(model => model.DescOne)
                         </p>
                     </div>
                 </div>
@@ -17,10 +19,10 @@
                 <div class="card-wrapper media-container-row">
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            Spełnij swoje marzenie
+                            @Html.DisplayFor(model => model.HeaderTwo)
                         </h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Spełnij swoje marzenie i kup mieszkanie już za 110 000 zł. Mieszkania z metrażem od 29m<sup>2</sup> do 67m<sup>2</sup>.
+                            @Html.DisplayFor(model => model.DescTwo)
                         </p>
                     </div>
                 </div>
@@ -29,10 +31,10 @@
                 <div class="card-wrapper media-container-row">
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            Mieszkania pod Wrocławiem
+                            @Html.DisplayFor(model => model.HeaderThree)
                         </h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Mieszkania w cenie już od 110 000 zł z dopłatą MDM. Od 1 do 4 pokoi, duże ogrody, mozliwość zabudowy antresoli.
+                            @Html.DisplayFor(model => model.DescThree)
                         </p>
                     </div>
                 </div>
@@ -41,10 +43,10 @@
                 <div class="card-wrapper media-container-row">
                     <div class="card-box">
                         <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            Treminy realizacji
+                            @Html.DisplayFor(model => model.HeaderFour)
                         </h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Zobacz terminy realizacji i umów się na spotkanie jeszcze dzisiaj.
+                            @Html.DisplayFor(model => model.DescFour)
                         </p>
                     </div>
                 </div>

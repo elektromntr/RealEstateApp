@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <includesetaclproviderondestination>False</includesetaclproviderondestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -189,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DomyController.cs" />
+    <Compile Include="Controllers\EtapyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InwestycjeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -200,6 +202,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dom.cs" />
+    <Compile Include="Models\Etap.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inwestycja.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -366,6 +369,7 @@
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
+    <None Include="Properties\PublishProfiles\ablab.aspnet.pl - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ablab.aspnet.pl - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\bwsoablab - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\bwsoablab - FTP.pubxml" />
@@ -581,8 +585,7 @@
     <Content Include="Views\Shared\_Kontakt.cshtml" />
     <Content Include="Views\Shared\_LayoutLtn.cshtml" />
     <Content Include="Views\Shared\_LayoutKrzptw.cshtml" />
-    <Content Include="Views\Shared\_FeatureLtn.cshtml" />
-    <Content Include="Views\Shared\_FeatureKrzptw.cshtml" />
+    <Content Include="Views\Shared\_Feature.cshtml" />
     <Content Include="Views\Shared\_FeatureSogo.cshtml" />
     <Content Include="Views\Shared\_GaleriaLtn.cshtml" />
     <Content Include="Views\Shared\_WykonczenieLtn.cshtml" />
@@ -590,6 +593,12 @@
     <Content Include="Views\Shared\_GaleriaSogo.cshtml" />
     <Content Include="Views\Shared\_WykonczenieKrzptw.cshtml" />
     <Content Include="Views\Shared\_WykonczenieSogo.cshtml" />
+    <Content Include="Views\Etapy\Create.cshtml" />
+    <Content Include="Views\Etapy\Delete.cshtml" />
+    <Content Include="Views\Etapy\Details.cshtml" />
+    <Content Include="Views\Etapy\Edit.cshtml" />
+    <Content Include="Views\Etapy\Index.cshtml" />
+    <Content Include="Views\Shared\_MapaMieszkanie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
