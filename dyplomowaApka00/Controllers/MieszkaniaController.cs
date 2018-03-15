@@ -48,7 +48,7 @@ namespace dyplomowaApka00.Controllers
         {
 
             var mieszkania = db.Mieszkania.Where(p => p.EtapId > 0);
-            //ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
+            ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
             //if (mieszkania == null) RedirectToAction("Index", "Home");
 
             if (id == null)

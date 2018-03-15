@@ -41,7 +41,7 @@ namespace dyplomowaApka00.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "kontakt@ablab.pl" };
+                var user = new ApplicationUser { UserName = "kontakt@ablab.pl", Email = "kontakt@ablab.pl" };
                 manager.Create(user, "1Ha5/0");
                 manager.AddToRole(user.Id, "Admin");
             }

@@ -38,9 +38,9 @@ else
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
             @Html.DisplayFor(model => model.SymbolMieszkania)
         </h2>
-        <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
-            @Html.DisplayFor(model => model.Status.Nazwa)
-        </h3>
+@*        <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
+        @Html.DisplayFor(model => model.Status.Nazwa)
+    </h3>*@
         <div class="align-center">
             @if (Roles.IsUserInRole("Operator"))
             {
@@ -60,14 +60,27 @@ else
                 <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
                     <div class="panel-item p-3">
 
-                        <div class="card-text">
-                            <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
-                                @Html.DisplayFor(model => model.Cena)
-                            </h3>
-                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-                                Cena
-                            </h4>
+                        <div class="card-text"> @*wyświetla cenę tylko w przypadku gdy status jest == 1*@
                             
+                                @if (Model.StatusId == 1)
+                                {
+                                    <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                        @Html.DisplayFor(model => model.Cena)
+                                    </h3>
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                        Cena
+                                    </h4>
+                                }
+                                else
+                                {
+                                    <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                        @Html.DisplayFor(model => model.Status.Nazwa)
+                                    </h3>
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                        &nbsp;
+                                    </h4>
+                                }
+
                         </div>
                     </div>
                 </div>
@@ -129,7 +142,7 @@ else
                                 @Html.DisplayFor(model => model.Poziom)
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-                                Poziom mieszkania
+                                Piętro mieszkania
                             </h4>
                             
                         </div>
