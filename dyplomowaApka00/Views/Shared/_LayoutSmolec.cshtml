@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="~/assets/images/logoSogo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="~/assets/images/logoSmolec.svg" type="image/x-icon">
     <title>@ViewBag.Title - My ASP.NET Application</title>
- 
+    
     <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="~/assets/tether/tether.min.css">
     <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="~/assets/animate.css/animate.min.css">
     <link rel="stylesheet" href="~/assets/dropdown/css/style.css">
     <link rel="stylesheet" href="~/assets/theme/css/style.css">
-    <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional-Krzptw.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional-Smolec.css" type="text/css">
     <script src="~/assets/web/assets/jquery/jquery.min.js"></script>
+
 
 </head>
 <body>
-   
+    
 
     <section class="menu cid-qvZclJodnm" once="menu" id="menu1-g" data-rv-view="922">
 
@@ -38,7 +39,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="@Url.Action("Index","Home")">
-                            <img src="~/assets/images/logoKrzeptow.svg" alt="Osiedle Krzeptów" media-simple="true" style="height: 3.8rem;">
+                            <img src="~/assets/images/logoSmolec.svg" alt="Osiedle Smolec" media-simple="true" style="height: 4.0rem;">
                         </a>
                     </span>
 
@@ -56,12 +57,13 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = 1 })" aria-expanded="false">Osiedle Lutynia</a><br>
+                            <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = 3 })" aria-expanded="false">Osiedle Smolec</a><br>
                             <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = 2 })" aria-expanded="false">Osiedle Krzeptów</a>
-                            @*Docelowo tu ma być partial listujący wszystkie inwestycje, zamiast hardcodowania każdej po kolei*@
+                            
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-primary display-4" href="@Url.Action("About", "Home")"><span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>Aktualności</a>
+                        <a class="nav-link link text-primary display-4" href="@Url.Action("About", "Home")"><span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>Informacje</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-primary display-4" href="#footer1-10"><span class="mbri-pin mbr-iconfont mbr-iconfont-btn"></span>Kontakt</a>

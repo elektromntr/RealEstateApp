@@ -1,0 +1,6 @@
+﻿@model IEnumerable<dyplomowaApka00.Models.Inwestycja>
+
+@foreach (var item in Model)
+{
+    <a class="text-primary dropdown-item display-4" href="@Url.Action("Details", new { controller = "Inwestycje", id = item.InwestycjaId })" aria-expanded="false">@item.Nazwa</a><br>
+}

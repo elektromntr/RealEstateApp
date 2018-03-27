@@ -9,21 +9,22 @@
 
     <div id="gallery" style="display:none;">    
 
-        @{int wizkiCount = Directory.GetFiles(@"c:\Users\barto\OneDrive\sogoNewWeb\_App\dyplomowaApka00\assets\images\lutynia\", "*").Length;
+        @{int wizkiCount = Directory.GetFiles(@"c:\Users\barto\OneDrive\sogoNewWeb\_App\dyplomowaApka00\assets\images\smolec\", "*").Length;
 
             for (int i = 0; i < wizkiCount; i++)
             {
-                string urlZGalerii = "/assets/images/lutynia/wizLutynia" + i + ".jpg";
-                string altZGalerii = "Osiedle Lutynia-Wizualizacja" + i;
+                string urlZGalerii = "/assets/images/smolec/wizSmolec" + i + ".jpg";
+                string altZGalerii = "Osiedle Smolec-Wizualizacja" + i;
                 <img alt=@altZGalerii src="@urlZGalerii" />
             }
         }
-
+        
     </div>
 
 </section>
 
 <script type="text/javascript">
+
 
 			jQuery(document).ready(function(){
 			    jQuery("#gallery").unitegallery({

@@ -9,11 +9,14 @@
 
     <div id="gallery" style="display:none;">    
 
-        @for (int i = 0; i < 10; i++)
-        {
-            string urlZGalerii = "/assets/images/krzeptow/krzeptow" + i + ".jpg";
-            string altZGalerii = "krzeptów" + i + ".jpg";
-            <img alt= @altZGalerii src = "@urlZGalerii" />
+        @{int wizkiCount = Directory.GetFiles(@"c:\Users\barto\OneDrive\sogoNewWeb\_App\dyplomowaApka00\assets\images\krzeptow\", "*").Length;
+
+            for (int i = 0; i < wizkiCount; i++)
+            {
+                string urlZGalerii = "/assets/images/krzeptow/wizKrzeptow" + i + ".jpg";
+                string altZGalerii = "Osiedle Krzeptów-Wizualizacja" + i;
+                <img alt=@altZGalerii src="@urlZGalerii" />
+            }
         }
         
     </div>
