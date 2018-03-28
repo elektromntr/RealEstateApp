@@ -1314,6 +1314,7 @@ body {
 }
 .cid-qvZclJodnm .menu-logo .navbar-brand .navbar-logo img {
   display: flex;
+  max-width: 84%;
 }
 .cid-qvZclJodnm .menu-logo .navbar-brand .navbar-logo .mbr-iconfont {
   transition: font-size 0.25s;

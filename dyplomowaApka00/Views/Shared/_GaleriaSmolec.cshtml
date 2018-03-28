@@ -9,7 +9,11 @@
 
     <div id="gallery" style="display:none;">    
 
-        @{int wizkiCount = Directory.GetFiles(@"c:\Users\barto\OneDrive\sogoNewWeb\_App\dyplomowaApka00\assets\images\smolec\", "*").Length;
+        @{
+            @*getting relative path to my folder*@
+            string myPath = Server.MapPath(@"~\assets\images\smolec\");
+            @*counting number of files in folder*@
+            int wizkiCount = Directory.GetFiles(myPath, "*.jpg").Length;
 
             for (int i = 0; i < wizkiCount; i++)
             {

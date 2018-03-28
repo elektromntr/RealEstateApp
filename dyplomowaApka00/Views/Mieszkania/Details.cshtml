@@ -8,6 +8,10 @@ else if (Model.InwestycjaId == 2)
 {
     Layout = "~/Views/Shared/_LayoutKrzptw.cshtml";
 }
+else if (Model.InwestycjaId == 3)
+{
+    Layout = "~/Views/Shared/_LayoutSmolec.cshtml";
+}
 else
 {
     Layout = "~/Views/Shared/_LayoutSogo.cshtml";
@@ -60,8 +64,8 @@ else
                 <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
                     <div class="panel-item p-3">
 
-                        <div class="card-text"> @*wyświetla cenę tylko w przypadku gdy status jest == 1*@
-                            
+                        <div class="card-text"> 
+                                @*wyświetla cenę tylko w przypadku gdy status jest == 1*@
                                 @if (Model.StatusId == 1)
                                 {
                                     <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
@@ -138,9 +142,18 @@ else
                     <div class="panel-item p-3">
 
                         <div class="card-texts">
-                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
-                                @Html.DisplayFor(model => model.Poziom)
-                            </h3>
+                                @if (Model.Poziom == 0)
+                                {
+                                    <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                       Parter
+                                    </h3>
+                                }
+                                else
+                                {
+                                    <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                        @Html.DisplayFor(model => model.Poziom)
+                                    </h3>
+                                }
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                 Piętro mieszkania
                             </h4>
@@ -156,7 +169,7 @@ else
 
                         <div class="card-texts">
                             <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
-                                @Html.DisplayFor(model => model.Garaz)
+                                Tak
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                 Garaż
@@ -167,6 +180,24 @@ else
                 </div>
                 }
 
+                @if (Model.Antresola == true)
+                {
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                        <div class="panel-item p-3">
+
+                            <div class="card-texts">
+                                <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
+                                    Tak
+                                </h3>
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
+                                    Antresola
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
                 @if (Model.KomorkaLokatorska == true)
                 {
                 <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
@@ -174,7 +205,7 @@ else
 
                         <div class="card-texts">
                             <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
-                                @Html.DisplayFor(model => model.KomorkaLokatorska)
+                                Tak
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                 Komórka lokatorska
@@ -208,10 +239,7 @@ else
                     <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
                         <div class="panel-item p-3">
 
-                            <div class="card-texts">
-                                
-                                    
-                                
+                            <div class="card-texts">    
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                     Dodatkowe informacje
                                 </h4>
@@ -233,8 +261,8 @@ else
 <!--rzut-->
 <section class="cid-qxcQP9QueA" id="image3-1i" data-rv-view="455">
     <figure class="mbr-figure container">
-        <div class="image-block" style="width: 80%;">
-            <img src="@Html.DisplayFor(model => model.ImageFile)" width="1400" alt="@Html.DisplayFor(model => model.SymbolMieszkania)" media-simple="true">
+        <div class="image-block mx-auto" style="width: 80%;">
+            <a href="@Html.DisplayFor(model => model.ImageFile)" target="_blank"><img src="@Html.DisplayFor(model => model.ImageFile)" width="1400" alt="@Html.DisplayFor(model => model.SymbolMieszkania)" media-simple="true"></a>
         </div>
     </figure>
 </section>
