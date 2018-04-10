@@ -1,5 +1,48 @@
-﻿<section class="cid-qw37E2a6Ed" id="footer1-10" data-rv-view="1070">
+﻿@model dyplomowaApka00.Models.EmailFormModel
 
+<section class="mbr-section form3 cid-qOKEbD9L00 mbr-parallax-background" id="form3-1p">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">Zadzwonimy do Ciebie</h2>
+                <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">Zostaw nam swój numer — oddzwonimy do Ciebie z ofertą</h3>
+            </div>
+        </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row py-2 justify-content-center">
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FromPhone)
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-default" value="WYŚLIJ" />
+                </div>
+            </div>
+        </div>
+    }
+
+        @*Formularz
+        <div class="row py-2 justify-content-center">
+            <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
+                <div data-form-alert="" hidden="">Dziękujemy! Skontaktujemy się z Tobą jak najszybciej</div>
+                <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form">
+                    <input type="hidden" data-form-email="true" value="7xhPyPvU1pOIsovfjgk0HyRxEIonHx2n4tWtJ0Bye0p0EwWK87mA1RlhLJjIc9CLxo/palBFvcR9MaVQAPgNdqtNzHhj7A6x0GT04T2hLnr1I09mHEPfmyn2ZXU5eptc">
+                    <div class="mbr-subscribe input-group">
+                        <input class="form-control" type="tel" name="email" placeholder="Numer telefonu (9 cyfr)" data-form-field="Email" required="" id="email-form3-1p">
+                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-primary display-4">PRZEŚLIJ NUMER</button></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        Formularz stop*@
+    </div>
+</section>
+
+<section class="cid-qw37E2a6Ed" id="footer1-10" data-rv-view="1070">
 
     <div class="container">
         <div class="media-container-row content text-white">

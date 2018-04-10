@@ -80,6 +80,7 @@
         <div>
             @Html.Partial("_Mapa")
             @Html.Partial("_Kontakt")
+            @Html.RenderAction("~/Views/Shared/_Kontakt.cshtml", Model.EmailFormModel, new ViewDataDictionary());
         </div>
     </div>
 
