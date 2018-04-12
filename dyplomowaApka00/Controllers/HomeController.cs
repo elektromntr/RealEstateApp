@@ -57,7 +57,7 @@ namespace dyplomowaApka00.Controllers
                     var credential = new NetworkCredential
                     {
                         UserName = "sogoSender@outlook.com",  // replace with valid value
-                        Password = "S0g053nder"  // replace with valid value
+                        Password = "****"  // replace with valid value
                     };
                     smtp.Credentials = credential;
                     smtp.Host = "smtp-mail.outlook.com";
