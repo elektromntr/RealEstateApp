@@ -34,10 +34,10 @@ namespace dyplomowaApka00.Controllers
             switch (niedostepne)
             {
                 case "ukryj":
-                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 4 powoduje wyświetlanie mieszkań wolnych
+                    mieszkania = mieszkania.Where(m => m.StatusId < 4); // StatusId < 4 powoduje wyświetlanie mieszkań wolnych
                     break;
                 default:
-                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId > 0 powoduje wyświetlanie mieszkań ze wszystkich
                     break;
             }
 
@@ -63,10 +63,10 @@ namespace dyplomowaApka00.Controllers
             switch (niedostepne)
             {
                 case "ukryj":
-                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 4 powoduje wyświetlanie mieszkań wolnych
+                    mieszkania = mieszkania.Where(m => m.StatusId < 4); // StatusId < 4 powoduje wyświetlanie mieszkań wolnych
                     break;
                 default:
-                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId > 0 powoduje wyświetlanie mieszkań wszystkich
                     break;
             }
 
@@ -77,17 +77,15 @@ namespace dyplomowaApka00.Controllers
         public ActionResult Index(string niedostepne)
         {
             ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
-            var mieszkania = db.Mieszkania.Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+            var mieszkania = db.Mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
 
             switch (niedostepne)
             {
                 case "ukryj":
-                    mieszkania = db.Mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
-                    //mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+                    mieszkania = db.Mieszkania.Where(m => m.StatusId < 4); // StatusId < 4 powoduje wyświetlanie mieszkań tylko wolnych
                     break;
                 default:
-                    mieszkania = db.Mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
-                    //mieszkania = db.Mieszkania.Include(m => m.Inwestycja).Include(m => m.Status).Where(m => m.StatusId <= 4); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    mieszkania = db.Mieszkania.Where(m => m.StatusId > 0); // StatusId > 0 powoduje wyświetlanie mieszkań wszystkich
                     break;
             }
 

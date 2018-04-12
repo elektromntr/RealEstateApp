@@ -31,6 +31,12 @@ namespace dyplomowaApka00.Controllers
             return View();
         }
 
+        public ActionResult EmailForm()
+        {
+            var model = new EmailFormModel();
+            return PartialView("_Kontakt", model);
+        }
+
         //email form
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -38,11 +44,11 @@ namespace dyplomowaApka00.Controllers
         {
             if (ModelState.IsValid)
             {
-                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var body = "<p>Zadzwoń do {1}</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress("bartosz@ablab.pl"));  // replace with valid value 
                 message.From = new MailAddress("sogoSender@outlook.com");  // replace with valid value
-                message.Subject = "Temat wiadomosci";
+                message.Subject = "Kontakt ze strony";
                 message.Body = string.Format(body, model.FromName, model.FromPhone, model.Message);
                 message.IsBodyHtml = true;
 
@@ -58,7 +64,7 @@ namespace dyplomowaApka00.Controllers
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
-                    return RedirectToAction("Sent");
+                    return RedirectToAction("Index");
                 }
             }
             return View(model);

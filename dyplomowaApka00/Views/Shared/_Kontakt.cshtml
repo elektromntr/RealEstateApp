@@ -9,36 +9,23 @@
             </div>
         </div>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Contact", "Home"))
     {
         @Html.AntiForgeryToken()
-        <div class="row py-2 justify-content-center">
+        
             <div class="form-group">
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control" })
+                
+                    @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control align-center", @type = "tel" })
                     @Html.ValidationMessageFor(m => m.FromPhone)
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" class="btn btn-default" value="WYŚLIJ" />
+                
+                <div class="align-center">
+                    <input type="submit" class="btn btn-primary display-4 align-center" value="WYŚLIJ" />
                 </div>
             </div>
-        </div>
+        
     }
 
-        @*Formularz
-        <div class="row py-2 justify-content-center">
-            <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                <div data-form-alert="" hidden="">Dziękujemy! Skontaktujemy się z Tobą jak najszybciej</div>
-                <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form">
-                    <input type="hidden" data-form-email="true" value="7xhPyPvU1pOIsovfjgk0HyRxEIonHx2n4tWtJ0Bye0p0EwWK87mA1RlhLJjIc9CLxo/palBFvcR9MaVQAPgNdqtNzHhj7A6x0GT04T2hLnr1I09mHEPfmyn2ZXU5eptc">
-                    <div class="mbr-subscribe input-group">
-                        <input class="form-control" type="tel" name="email" placeholder="Numer telefonu (9 cyfr)" data-form-field="Email" required="" id="email-form3-1p">
-                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-primary display-4">PRZEŚLIJ NUMER</button></span>
-                    </div>
-                </form>
-            </div>
-        </div>
-        Formularz stop*@
+        
     </div>
 </section>
 
@@ -64,7 +51,7 @@
                     Kontakt
                 </h5>
                 <p class="mbr-text">
-                    Email: sprzedaz@sogo.pl
+                    Email: <a href="mailto:sprzedaz@sogo.pl">sprzedaz@sogo.pl</a>
                     <br>Biuro: +48 (71) 707 00 60
                     <br>Mobile: +48 783 18 38 38
                 </p>
