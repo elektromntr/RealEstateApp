@@ -46,8 +46,8 @@ namespace dyplomowaApka00.Controllers
             {
                 var body = "<p>Zadzwoń do {1}</p>";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress("bartosz@ablab.pl"));  // replace with valid value 
-                message.From = new MailAddress("sogoSender@outlook.com");  // replace with valid value
+                message.To.Add(new MailAddress("adresat@email.com"));  // replace with valid value 
+                message.From = new MailAddress("nadawca@email.com");  // replace with valid value
                 message.Subject = "Kontakt ze strony";
                 message.Body = string.Format(body, model.FromName, model.FromPhone, model.Message);
                 message.IsBodyHtml = true;
@@ -56,7 +56,7 @@ namespace dyplomowaApka00.Controllers
                 {
                     var credential = new NetworkCredential
                     {
-                        UserName = "sogoSender@outlook.com",  // replace with valid value
+                        UserName = "nadawca@email.com",  // replace with valid value
                         Password = "****"  // replace with valid value
                     };
                     smtp.Credentials = credential;
