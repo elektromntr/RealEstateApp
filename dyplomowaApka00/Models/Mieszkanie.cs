@@ -47,7 +47,7 @@ namespace dyplomowaApka00.Models
         public byte Poziom { get; set; }
 
         [Required(ErrorMessage = "Proszę podać powierzchnię mieszkania")]
-        public byte Powierzchnia { get; set; }
+        public decimal Powierzchnia { get; set; }
 
         [Required(ErrorMessage = "Proszę podać ilość pokoi w mieszkaniu")]
         public byte Pokoje { get; set; }

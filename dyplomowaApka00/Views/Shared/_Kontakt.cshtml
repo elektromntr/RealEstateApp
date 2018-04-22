@@ -1,5 +1,35 @@
-﻿<section class="cid-qw37E2a6Ed" id="footer1-10" data-rv-view="1070">
+﻿@model dyplomowaApka00.Models.EmailFormModel
 
+<section class="mbr-section form3 cid-qOKEbD9L00 mbr-parallax-background" id="form3-1p">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">Zadzwonimy do Ciebie</h2>
+                <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">Zostaw nam swój numer — oddzwonimy do Ciebie z ofertą</h3>
+            </div>
+        </div>
+
+    @using (Html.BeginForm("Contact", "Home"))
+    {
+        @Html.AntiForgeryToken()
+        
+            <div class="form-group">
+                
+                    @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control align-center", @type = "tel" })
+                    @Html.ValidationMessageFor(m => m.FromPhone)
+                
+                <div class="align-center">
+                    <input type="submit" class="btn btn-primary display-4 align-center" value="WYŚLIJ" />
+                </div>
+            </div>
+        
+    }
+
+        
+    </div>
+</section>
+
+<section class="cid-qw37E2a6Ed" id="footer1-10" data-rv-view="1070">
 
     <div class="container">
         <div class="media-container-row content text-white">
@@ -21,7 +51,7 @@
                     Kontakt
                 </h5>
                 <p class="mbr-text">
-                    Email: sprzedaz@sogo.pl
+                    Email: <a href="mailto:sprzedaz@sogo.pl">sprzedaz@sogo.pl</a>
                     <br>Biuro: +48 (71) 707 00 60
                     <br>Mobile: +48 783 18 38 38
                 </p>

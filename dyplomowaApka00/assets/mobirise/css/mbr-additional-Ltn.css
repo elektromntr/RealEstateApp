@@ -2480,3 +2480,105 @@ body {
     -webkit-justify-content: center;
   }
 }
+
+/*form subscribe*/
+
+.cid-qOKEbD9L00 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /*background-image: url("../../../assets/images/fotolia-103141139-subscription-monthly-m-1690x1124.jpg");*/
+}
+.cid-qOKEbD9L00 .mbr-section-subtitle {
+  color: #767676;
+}
+.cid-qOKEbD9L00 .formoid {
+  margin: auto;
+}
+.cid-qOKEbD9L00 .form-control {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.cid-qOKEbD9L00 a.btn {
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+.cid-qOKEbD9L00 .input-group-btn {
+  align-self: center;
+  -webkit-align-self: center;
+  z-index: 3;
+}
+.cid-qOKEbD9L00 .input-group-btn .btn {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.cid-qOKEbD9L00 a:not([href]):not([tabindex]) {
+  color: #fff;
+}
+.cid-qOKEbD9L00 a.btn-white:not([href]):not([tabindex]) {
+  color: #333;
+}
+.cid-qOKEbD9L00 .mbr-subscribe .input-group-btn {
+  display: inline-block;
+}
+.cid-qOKEbD9L00 .mbr-subscribe .input-group-btn button,
+.cid-qOKEbD9L00 .mbr-subscribe .input-group-btn a {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 350px) {
+  .cid-qOKEbD9L00 .mbr-subscribe {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+  }
+  .cid-qOKEbD9L00 input[type="email"] {
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  .cid-qOKEbD9L00 .input-group-btn {
+    width: 100%;
+  }
+  .cid-qOKEbD9L00 .input-group-btn .btn {
+    border-radius: 3px;
+  }
+}
+@media (max-width: 768px) {
+  .cid-qOKEbD9L00 .input-group-btn a.btn {
+    width: 100%;
+  }
+  .cid-qOKEbD9L00 .input-group-btn {
+    width: calc(92%);
+  }
+  .cid-qOKEbD9L00 .input-group-btn button[type="submit"] {
+    width: 100%;
+  }
+  .cid-qOKEbD9L00 .input-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 300px;
+  }
+  .cid-qOKEbD9L00 .input-group input[type="email"] {
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  .cid-qOKEbD9L00 .input-group span {
+    display: inline;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cid-qOKEbD9L00 .input-group-btn button,
+  .cid-qOKEbD9L00 .input-group-btn a {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 769px) {
+  .cid-qOKEbD9L00 .mbr-subscribe > * {
+    margin: 0 0.5rem;
+  }
+}
+
+/*form subscribe stop*/

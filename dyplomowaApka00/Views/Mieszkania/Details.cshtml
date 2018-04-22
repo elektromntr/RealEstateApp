@@ -66,7 +66,7 @@ else
 
                         <div class="card-text"> 
                                 @*wyświetla cenę tylko w przypadku gdy status jest == 1*@
-                                @if (Model.StatusId == 1)
+                                @if (Model.StatusId < 3)
                                 {
                                     <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
                                         @Html.DisplayFor(model => model.Cena)
@@ -93,7 +93,7 @@ else
                     <div class="panel-item p-3">
 
                         <div class="card-text">
-                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                            <h3 class="pt-3 pb-3 mbr-fonts-style display-2">
                                 @Html.DisplayFor(model => model.Powierzchnia)
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
