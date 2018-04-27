@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="~/assets/images/logoSogo.svg" type="image/x-icon">
-    <title>@ViewBag.Title — Osiedla Sogo</title>
+    <title>@ViewBag.Title Osiedla Sogo</title>
     
     <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="~/assets/tether/tether.min.css">
@@ -98,6 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             @Html.Partial("_Mapa")
             @*Html.Partial("_Kontakt")*@
             @Html.Action("EmailForm", "Home")
+            @Html.Partial("_BiuroLtn")
         </div>
     </div>
 

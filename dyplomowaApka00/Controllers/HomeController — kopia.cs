@@ -46,11 +46,11 @@ namespace dyplomowaApka00.Controllers
             {
                 var body = "<p>Zadzwoń do {1}</p>";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress("s@s.pl"));  // replace with valid value 
-                message.To.Add(new MailAddress("s@s.pl"));  // replace with valid value 
-                message.To.Add(new MailAddress("s@s.pl"));  // replace with valid value 
-                message.To.Add(new MailAddress("s@s.pl"));  // replace with valid value 
-                message.From = new MailAddress("s@s.pl");  // replace with valid value
+                message.To.Add(new MailAddress("sprzedaz@sogo.pl"));  // replace with valid value 
+                message.To.Add(new MailAddress("sprzedaz@osiedle-lutynia.pl"));  // replace with valid value 
+                message.To.Add(new MailAddress("sprzedaz@osiedle-krzeptow.pl"));  // replace with valid value 
+                message.To.Add(new MailAddress("sogoReceiver@outlook.com"));  // replace with valid value 
+                message.From = new MailAddress("sogoSender@outlook.com");  // replace with valid value
                 message.Subject = "Kontakt ze strony";
                 message.Body = string.Format(body, model.FromName, model.FromPhone, model.Message);
                 message.IsBodyHtml = true;
@@ -60,8 +60,8 @@ namespace dyplomowaApka00.Controllers
                     
                     var credential = new NetworkCredential
                     {
-                        UserName = "s@s.pl",  // replace with valid value
-                        Password = "sss"  // replace with valid value
+                        UserName = "sogoSender@outlook.com",  // replace with valid value
+                        Password = "Sogo53nd3r"  // replace with valid value
                     };
 
                     smtp.UseDefaultCredentials = false;

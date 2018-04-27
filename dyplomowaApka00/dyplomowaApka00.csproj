@@ -610,6 +610,8 @@
     <Content Include="Views\Shared\_InwestycjeMenu.cshtml" />
     <Content Include="Views\Shared\_GaleriaSmolec.cshtml" />
     <Content Include="Views\Shared\_LayoutSmolec.cshtml" />
+    <Content Include="Views\Shared\_BiuroLtn.cshtml" />
+    <Content Include="Views\Shared\_BiuroKrzptw.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

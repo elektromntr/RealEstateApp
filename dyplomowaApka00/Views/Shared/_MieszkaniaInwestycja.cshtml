@@ -48,7 +48,7 @@
                         <tr>
                             
                             <td class="body-item mbr-fonts-style display-7">
-                                <a href="@Url.Action("Details", "Mieszkania", new { id = item.MieszkanieId })">@Html.DisplayFor(modelItem => item.SymbolMieszkania)</a>
+                                <a href="@Url.Action("Details", "Mieszkania", new { id = item.MieszkanieId })">@Html.DisplayFor(modelItem => item.SymbolMieszkania) <span class="mbri-file mbr-iconfont mbr-iconfont-btn"></span></a>
                             </td>
                             <!--ukrycie ceny jeśli status inny niż Wolne-->
                             @if (item.Status.StatusId < 3)
@@ -56,7 +56,7 @@
                                 <td class="body-item mbr-fonts-style display-7 wolne">
                                     @if (item.Status.StatusId == 2)
                                     {
-                                        @Html.DisplayFor(modelItem => item.Cena) <span>(Promocja!)</span>
+                                        @Html.DisplayFor(modelItem => item.Cena) <span><span class="mbri-sale mbr-iconfont mbr-iconfont-btn"></span> Promocja!</span>
                                     }
                                     else
                                     {
