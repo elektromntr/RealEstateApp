@@ -15,7 +15,7 @@ namespace dyplomowaApka00.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // markowy partial
-        public ActionResult MieszkaniaZInwestycji(int? id, string niedostepne)
+        public ActionResult MieszkaniaZInwestycji(int? id, string niedostepne, string promocja)
         {
             
             var mieszkania = db.Mieszkania.Where(p => p.InwestycjaId > 0);
@@ -41,9 +41,20 @@ namespace dyplomowaApka00.Controllers
                     break;
             }
 
+            switch (promocja)
+            {
+                case "tak":
+                    mieszkania = mieszkania.Where(m => m.StatusId == 2);
+                    break;
+                default:
+                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+                    break;
+            }
+
             return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
         }
 
+        //mieszkania z danego etapu
         public ActionResult MieszkaniaZEtapu(int? id, string niedostepne)
         {
 
@@ -72,7 +83,7 @@ namespace dyplomowaApka00.Controllers
 
             return PartialView("_MieszkaniaInwestycja", mieszkania.ToList());
         }
-
+  
         // GET: Mieszkania
         public ActionResult Index(string niedostepne)
         {

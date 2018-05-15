@@ -21,9 +21,11 @@ namespace dyplomowaApka00.Controllers
         }
 
         // GET: Inwestycje/Details/5
-        public ActionResult Details(int? id, string niedostepne)
+        public ActionResult Details(int? id, string niedostepne, string promocja)
         {
             ViewBag.UkryjPokaz = niedostepne == "ukryj" ? "pokaz" : "ukryj";
+            ViewBag.Promocja = promocja == "tak" ? "nie" : "tak";
+
             var mieszkania = db.Mieszkania.Where(m => m.InwestycjaId == id);
             if (id == null)
             {
@@ -35,15 +37,17 @@ namespace dyplomowaApka00.Controllers
                 return HttpNotFound();
             }
 
-            switch (niedostepne)
-            {
-                case "ukryj":
-                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
-                    break;
-                default:
-                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
-                    break;
-            }
+//            switch (niedostepne)
+//            {
+//                case "ukryj":
+//                    mieszkania = mieszkania.Where(m => m.StatusId == 1); // StatusId == 1 powoduje wyświetlanie mieszkań tylko wolnych
+//                    break;
+//                default:
+//                    mieszkania = mieszkania.Where(m => m.StatusId > 0); // StatusId <= 4 powoduje wyświetlanie mieszkań ze statusem tylko mniejszym lub równym 4, czyli wszystkie
+//                    break;
+//            }
+
+            
                         
             return View(inwestycja);
         }
