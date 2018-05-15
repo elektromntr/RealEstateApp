@@ -129,36 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbri-down mbr-iconfont"></i></a></div>
     <input name="animation" type="hidden">
 
-    @if (HttpContext.Current.Request.Url.AbsoluteUri.Contains("promocja=tak"))
-    { }
-    else
-    {
-        <!-- Modal -->
-        <div class="modal fade" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="display-5" id="exampleModalLongTitle">Wyjątkowa promocja!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Rabat 10 000 zł dla każdego przy zakupie mieszkania 3-pokojowego na I piętrze (67m<sup>2</sup>) oraz kolejne 5 000 zł rabatu na każde dziecko!
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-primary" href="/lutynia?promocja=tak">Zobacz mieszkania w promocji</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script type="text/javascript" language="javascript">
-			$(document).ready(function(){
-				$("#promoModal").modal('show');
-			});
-        </script>
-    }
+    
     
 
 </body>
