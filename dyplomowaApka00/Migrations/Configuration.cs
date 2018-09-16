@@ -26,7 +26,7 @@ namespace dyplomowaApka00.Migrations
             context.Inwestycje.AddOrUpdate(
                 i => i.InwestycjaId,
                 new Inwestycja { InwestycjaId = 1, Nazwa = "Osiedle Lutynia" },
-                new Inwestycja { InwestycjaId = 2, Nazwa = "Osiedle Krzeptów" },
+                new Inwestycja { InwestycjaId = 2, Nazwa = "Osiedle KrzeptÃ³w" },
                 );*/
 
             //  This method will be called after migrating to the latest version.
@@ -48,12 +48,12 @@ namespace dyplomowaApka00.Migrations
                 var role = new IdentityRole { Name = "Admin" };
                 manager.Create(role);
             }
-            if (!context.Users.Any(u => u.UserName == "kontakt@ablab.pl"))
+            if (!context.Users.Any(u => u.UserName == "kontakt@kontakt.pl"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "kontakt@ablab.pl" };
-                manager.Create(user, "1Ha5/0");
+                var user = new ApplicationUser { UserName = "kontakt@kontakt.pl" };
+                manager.Create(user, "haslo");
                 manager.AddToRole(user.Id, "Admin");
             }
         }
